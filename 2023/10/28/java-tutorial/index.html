@@ -1,487 +1,254 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hexo tutorial</title>
-    <url>/2023/10/28/Hexo-tutorial/</url>
-    <content><![CDATA[<h3 id="一-Hexo日常发布文章"><a href="#一-Hexo日常发布文章" class="headerlink" title="一. Hexo日常发布文章"></a>一. Hexo日常发布文章</h3><ol>
-<li><p>进入博客所在目录，创建博文：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;BlogName&quot;</span><br></pre></td></tr></table></figure>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
 
-<p>这时在source文件夹下会出现BlogName.md文件</p>
-</li>
-<li><p>在BlogName.md文件中写内容…</p>
-</li>
-<li><p>使用以下代码渲染文章，并部署到GitHub上</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g # 生成页面</span><br><span class="line">hexo d # 部署腹部</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="二-网站设置"><a href="#二-网站设置" class="headerlink" title="二. 网站设置"></a>二. 网站设置</h3><p>​		包括网站名称、描述、作者、链接样式等，全部在_config.yml文件中</p>
-<p>​		注意：<strong>冒号后要加一个空格</strong></p>
-<h3 id="三-更换主题"><a href="#三-更换主题" class="headerlink" title="三. 更换主题"></a>三. 更换主题</h3><p>​		在<a href="https://link.zhihu.com/?target=https://hexo.io/themes/">Hexo|Themes</a>中选择一个喜欢的主题，比如<a href="https://link.zhihu.com/?target=http://theme-next.iissnan.com/getting-started.html">NexT</a>， 进入网站目录使用以下命令下载主题：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
-<p>​		然后修改_config.yml的theme为新主题名称next，发布。</p>
-<h3 id="四-常用命令"><a href="#四-常用命令" class="headerlink" title="四. 常用命令"></a>四. 常用命令</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g                # 生成页面</span><br><span class="line">hexo d                # 部署</span><br><span class="line">hexo g -d             # 生成页面并部署</span><br><span class="line">hexo s                # 本地预览</span><br><span class="line">hexo clean            # 清除缓存和已生成的静态文件</span><br><span class="line">hexo help             # 帮助</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="/css/main.css">
 
-<h3 id="五-主题next文档"><a href="#五-主题next文档" class="headerlink" title="五. 主题next文档"></a>五. 主题next文档</h3><p>​		中文文档：<a href="https://hexo-next.readthedocs.io/zh-cn/latest/">https://hexo-next.readthedocs.io/zh-cn/latest/</a></p>
-<p>​		英文文档：<a href="https://theme-next.js.org/docs/">https://theme-next.js.org/docs/</a></p>
-<p>参考文献：</p>
-<p><a href="https://zhuanlan.zhihu.com/p/60578464">https://zhuanlan.zhihu.com/p/60578464</a></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++ tutorial</title>
-    <url>/2023/10/28/c-tutorial/</url>
-    <content><![CDATA[<ol>
-<li>solution：一些project相互联系形成</li>
-</ol>
-<h2 id="vs使用技巧"><a href="#vs使用技巧" class="headerlink" title="vs使用技巧"></a>vs使用技巧</h2><h3 id="一-界面"><a href="#一-界面" class="headerlink" title="一. 界面"></a>一. 界面</h3><ol>
-<li>不要依赖error窗口，最好去观察<strong>output窗口</strong></li>
-<li>project中的Header Files等<strong>并不实际存在与之对应的文件夹，它们只是filter，不是directory!</strong> 我们可以使用Show All Files，使其展现实际的目录</li>
-<li>因此，我们可以在Show All Files后，创建<strong>src</strong>文件夹来存储所有的<strong>cpp文件和头文件</strong>，并不会影响原本的Source Files等filter中的文件架构</li>
-<li>项目中产生的中间文件在.&#x2F;x86&#x2F;Debug中，而.&#x2F;Debug中存储的是最终结果</li>
-<li>尽量不要使用全局变量</li>
-</ol>
-<h3 id="二-Debug"><a href="#二-Debug" class="headerlink" title="二. Debug"></a>二. Debug</h3><ol>
-<li><p>debug的两大部分：<strong>断点和读取内存</strong></p>
-</li>
-<li><p>电脑永远是正确的（笑，至少在99%的条件下），问题都在程序员</p>
-</li>
-<li><p>断点：程序中调试器将中断的点。运行程序被挂起，我们可以查看<strong>内存</strong>中的状态（state）</p>
-<p><strong>在没有代码的行或不执行的行上打断点是没有意义的，必须搭载将要执行的代码行上</strong></p>
-</li>
-<li><p>内存：内存中未初始化的变量所占空间一般都是用<strong>cc</strong>进行填充，这些地方即为<strong>栈空间</strong> (<strong>该特点仅在win32环境(即x86)下生效，在x64下被取消了</strong>)</p>
-</li>
-</ol>
-<h3 id="三-编程技巧"><a href="#三-编程技巧" class="headerlink" title="三. 编程技巧"></a>三. 编程技巧</h3><ol>
-<li>always使用const来引用对象，不要copy</li>
-<li>使用c++的原因：性能，控制，底层优化</li>
-</ol>
-<h2 id="C-基础知识"><a href="#C-基础知识" class="headerlink" title="C++基础知识"></a>C++基础知识</h2><h3 id="一-编译"><a href="#一-编译" class="headerlink" title="一. 编译"></a>一. 编译</h3><ol>
-<li><p>cpp文件不等同于翻译单元！可能存在多个cpp文件共同组成一个cpp文件，随后进行编译，此时共同组成的大cpp文件是一个翻译单元，在编译后生成一个obj文件</p>
-</li>
-<li><p>**编译通常分为两个阶段：compile (编译) + linking (链接)</p>
-</li>
-<li><p>常用的预处理语句：include, define, if, ifdef, pragma</p>
-</li>
-</ol>
-<p>​	include: <strong>COPY and PASTE</strong>. 复制头文件的内容，粘贴到新的文件中。在vs中可以将预处理结果和输出结果输出到.i文件中。<strong>当生成.i文件时，vs不会再生成obj文件</strong>，所以我们一般禁用</p>
-<p>​	在include中, &lt;&gt;只用于编译器包含路径，而**””同时可以用于编译器包含路径和相对路径**，但一般我们只用来表示相对路径。</p>
-<p>​	C++标准库没有.h后缀（如iostream），而C标准库有，这是设计者对两者的区分标准</p>
-<p>​	define: <strong>FIND and REPLACE</strong>, 在代码中找到所有以前者命名的部分，然后替换为后者</p>
-<p>​	pragma once: 阻止单个头文件被多次包含，并转换为单个翻译单元 （比如结构体，重复包含会报错）</p>
-<p>​	ifNdef （变量）endif: 检查后边的变量是否被定义，如果未定义就执行</p>
-<ol start="4">
-<li>output中的错误类型：</li>
-</ol>
-<p>​		C… : 代表在编译阶段出错</p>
-<p>​		LNK…: 代表在链接阶段出错</p>
-<ol start="6">
-<li><p><strong>项目的入口一般是main函数，但不一定是main函数</strong>。对于一个应用（Application）来说，入门是可以调整的</p>
-</li>
-<li><p>常见的链接错误：</p>
-<p><strong>unresolved external symbol</strong>: 链接器找不到它所需要的东西。<strong>只有在cpp文件中，真实发生了函数调用，连接器才会去链接。</strong>如果只是声明了函数，但是实际文件中没有使用，那么链接器是不会链接的，也不会发生链接错误。这里也有一个前提条件，就是保证<strong>函数绝对不会被调用！</strong>如果这个函数写在了另一个函数里面，那就是可能调用，因此也会链接。</p>
-<p>重复：函数或变量重名，链接器不知道链接哪一个 </p>
-<hr>
-<p><strong>重复的重要例子</strong>：在.h文件中写明了函数体，然后在两个cpp文件中分别include该.h文件，发生重复错误</p>
-<p>错误原因：include只是简单的复制粘贴，这导致在两个cpp文件中分别具有该函数体的定义，并分别编译了一遍</p>
-<p>解决方法：</p>
-<p>i. 在.h文件中，将函数体定义为static，这样在只在每一个翻译单元内有效</p>
-<p>ii. 在.h文件中，将函数体定义为inline，这样相当于没有调用函数，而是直接使用代码块</p>
-<p>iii. (推荐) 在.h文件中只有函数声明文件，然后在一个翻译单元中写对应的函数体</p>
-</li>
-<li><p>extern: 表示编译器将从该翻译单元外来寻找该变量</p>
-</li>
-</ol>
-<h3 id="二-基本数据类型"><a href="#二-基本数据类型" class="headerlink" title="二. 基本数据类型"></a>二. 基本数据类型</h3><ol>
-<li><p>基本数据类型：char(1), short(2), int(4), long(4), long long (8), float(4), double(8), bool(1)： </p>
-</li>
-<li><p>在C++中，不同变量类型之间的唯一区别在于它们的<strong>大小</strong></p>
-</li>
-<li><p>unsigned_int: 无符号数，不是负数，可以将正数的范围扩大一倍</p>
-</li>
-</ol>
-<p>​	4. <strong>一般来说，我们用char代表字符，不用来存储数组</strong></p>
-<p>​		在c++中，小数<strong>默认为double</strong>类型，如果要用float类型表示小数，可以在小数后面添加<strong>f或F</strong></p>
-<pre><code>5. **sizeof**：查看数据类型的字节数
-</code></pre>
-<ol start="5">
-<li><p>关键字const: 在代码生成上没什么用，主要针对<strong>开发者</strong>，相当于一个承诺。</p>
-<p>一种简单的绕过方法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const int MAX_AGE = 90;</span><br><span class="line">int num = 10;</span><br><span class="line">int* a = new int;</span><br><span class="line">// 这里如果不使用类型转换，就会报错</span><br><span class="line">a = (int*)&amp;MAX_AGE;</span><br><span class="line">// 这里是设置指针指向的内容为const，会使得无法通过逆向引用改变该空间的值，但是该指针指向的地址仍然是可变的；同时，该指针向的数据仍然是可读的</span><br><span class="line">const int* b = MAX_AGE;</span><br><span class="line">// 正确的，不会报错</span><br><span class="line">b = &amp;num;</span><br><span class="line">// 设置指针本身为const，可以改变该空间的值，但是该指针无法指向其他数据</span><br><span class="line">int* const p;</span><br><span class="line"></span><br><span class="line">// 类内使用</span><br><span class="line">class Entity</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	int m_X, int m_Y;</span><br><span class="line">public:</span><br><span class="line">	// 这里的const仅在类内有效，标明我们不会通过该方法去修改类内的变量</span><br><span class="line">	int const GetX() const</span><br><span class="line">	&#123;</span><br><span class="line">		return m_X;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>​		类内方法const的产生原因：</p>
-<p>​		在部分时候，我们将类的对象传递给一个新的函数时，需要确保这个函数内不会修改该对象，因此会将类的参数前添加const。这时候如果类中有方法能够直接修改参数，会与我们此时的目的矛盾。</p>
-<p>​		因此在c++中，如果我们使用const传递一个类的对象，那么在该函数中我们只能使用该类的const方法，不能使用其他方法。<strong>所以，我们要注意定义类的方法为const</strong> (有时候我们也会使用方法重载的方法，定义一个方法为const, 而另一个方法不是)</p>
-<p>​		在c++的const方法中修改变量的方法：</p>
-<p>​		**定义该变量为mutable (可更改的)**，这样即使在const方法中，我们也能够修改该变量。</p>
-<ol start="6">
-<li><p>关键字mutable: 主要用于两个场景 - const 和lambda </p>
-<p>​		mutable在const方法中的应用场景：（最常见的方法）本质上我们希望该方法并不改变类中的变量，但是又由于一定原因希望它能够修改部分变量（比如在调试的过程中，我们希望在原本的const方法中，确定该方法调用了多少次，因此就需要一个计数器）</p>
-<p>​		mutable在lambda中的应用场景（非常少见）：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025120016660.png" alt="image-20231025120016660"></p>
-<p>​		这里我们进行了值传递，在函数内修改了x的值（如果是普通的值传递，这里的修改是不被允许的）。但是在函数外，x的值并没有发生变化</p>
-</li>
-<li><p>三元运算符：a &#x3D; () ? : ; </p>
-<p>一般来说，能使用三元运算符的地方，我们就不用if-else，因为后者需要在运行中创建中间变量，运行速度更三元运算符的嵌套：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s_Speed = s_Level &gt; 5 ? s_Level &gt; 10 ? 15 : 10 : 5;</span><br></pre></td></tr></table></figure>
 
-<p>都满足时输出15，大于5小于10时输出10，否则输出5.</p>
-<p><strong>不过一般不要使用三元运算符的嵌套，太让人费解</strong></p>
-</li>
-<li><p>栈：有自动的作用域，当超过作用域的时候，自动删除</p>
-<p>堆：除非手动delete，否则不会消失</p>
-</li>
-<li><p>操作符new: 使用new的时候，由于需要寻找符合条件的内存，所以很花时间，很慢</p>
-<p>使用new创建对象的时候，<strong>默认创建的是一个void类型的指针</strong>，只是通过隐式转换得到了我们所需要的指针类型</p>
-<p>new类似+-，可以被重载，他会返回一个指针</p>
-</li>
-<li><p>隐式转化： </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Entity</span><br><span class="line">&#123;</span><br><span class="line">private:</span><br><span class="line">	string m_Name;</span><br><span class="line">	int age;</span><br><span class="line">public:</span><br><span class="line">	Entity(string name)</span><br><span class="line">		:m_Name(name), :age(-1)</span><br><span class="line">		&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	Entity(int age)</span><br><span class="line">		:m_Name(&quot;unknown&quot;), :age(age)</span><br><span class="line">		&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void printEntity(Entity&amp; e)&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// main函数内部</span><br><span class="line">// 这样定义是可行的，因为构造函数中提供了相应的方法</span><br><span class="line">Entity e = &quot;windbro&quot;;</span><br><span class="line">Entity e1 = 23;</span><br><span class="line">// 这样调用函数也是可行的</span><br><span class="line">printEntity(23);</span><br><span class="line">// 假如直接输入windbro，这里我们就需要进行两次隐式转换，这是并不能实现的</span><br><span class="line">// 因此，我们需要先将windbro转换为string类型，然后输入即可</span><br><span class="line">printEntity(string(&quot;windbro&quot;));</span><br><span class="line">// 也可以这样，这样更常用</span><br><span class="line">Entity b(22);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>关键字explicit: 放在构造函数前面，组织构造函数的隐式转换。（应用场景，如数学库，因为这时候我们并不希望进行隐式转换）</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025181657494.png" alt="image-20231025181657494"></p>
-</li>
-<li><p>运算符：<strong>运算符可以看作一个函数</strong>，运算符的重载必须是<strong>必要的且很容易被人理解</strong>，否则就不要进行</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025182830852.png" alt="image-20231025182830852"></p>
-<p>对左移符号&lt;&lt;的重载，从而让构造的类能够被cout输出。它必须写在类的外面，因为这是对ostream中内容的重写</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025183050321.png" alt="image-20231025183050321"></p>
-</li>
-<li><p>关键字this：指向<strong>当前对象实例的指针</strong>。</p>
-</li>
-<li><p>拷贝：<strong>需要掌握什么时候需要拷贝，什么时候不需要拷贝，从而提高性能</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">int a = 3;</span><br><span class="line">// 不同于python，这里的b是一块新的内存空间，因此这里是拷贝</span><br><span class="line">int b = a;</span><br></pre></td></tr></table></figure>
 
-<p>拷贝构造函数：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025193905406.png" alt="image-20231025193905406"></p>
-<p>注意：</p>
-<ol>
-<li>默认的构造函数是对类内的值进行拷贝。在本例中，我们将m_Buffer指针的值赋给了新的String对象。这就产生了一个bug：当进行拷贝时，原对象和拷贝对象的m_Buffer指向的对象是相同的，会被同时修改或删除，即<strong>浅拷贝</strong>，如果想要深拷贝，我们就需要自己在拷贝构造函数中写。</li>
-</ol>
-</li>
-<li><p>运算符-&gt; : 主要用于类的指针类型使用。</p>
-<p>使用箭头获取变量的偏离量，这里的nullptr可以直接用0代替：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025194925687.png" alt="image-20231025194925687"></p>
-</li>
-</ol>
-<h3 id="三-函数"><a href="#三-函数" class="headerlink" title="三. 函数"></a>三. 函数</h3><ol>
-<li><p>主要目的：防止代码重复</p>
-</li>
-<li><p>注意：<strong>不要过度使用函数，因为函数的调用过程非常耗时，会让程序变慢</strong></p>
-</li>
-<li><p>函数签名：对函数的声明</p>
-</li>
-</ol>
-<h3 id="四-文件"><a href="#四-文件" class="headerlink" title="四. 文件"></a>四. 文件</h3><ol>
-<li>头文件：<strong>声明某些类型的函数或变量，从而能够在程序中使用</strong></li>
-</ol>
-<h3 id="五-条件语句"><a href="#五-条件语句" class="headerlink" title="五. 条件语句"></a>五. 条件语句</h3><ol>
-<li>if语句和分支语句一般伴随着比较大的开销，由于内存的跳转等复杂操作</li>
-<li>对于指针来说，如果指针为null，其相当于0，也可以直接放在判断条件中表示错误</li>
-<li>if … else if … , else if实际上是两个语句，一个else语句，一个if语句。<strong>else if 不是c++中的关键字</strong></li>
-<li>实际中可以使用<strong>数学计算来代替条件语句</strong>，这样可以大大提高程序的速度。</li>
-</ol>
-<h3 id="六-循环语句"><a href="#六-循环语句" class="headerlink" title="六. 循环语句"></a>六. 循环语句</h3><ol>
-<li><p>一般循环语句指for loop 和 while loop，还有do while，但是现在并不常见</p>
-</li>
-<li><p>for loop和while loop使用的一般习惯：</p>
-<p>当所需要比较的条件（如一个条件变量）发生改变的时候，往往使用for loop。<strong>这时候我们还往往需要使用变化量</strong></p>
-<p>当所需要比较的条件不发生改变的时候，往往使用while loop</p>
-</li>
-<li><p>控制语句：continue:, break, return</p>
-</li>
-</ol>
-<h3 id="七-编译优化"><a href="#七-编译优化" class="headerlink" title="七. 编译优化"></a>七. 编译优化</h3><ol>
-<li>常数折叠：当判断语句(如if (a&#x3D;&#x3D;1)) 或出现常数计算(如 a &#x3D; 5*6)时，编译器会直接计算对应的结果，并对汇编结果进行优化。</li>
-</ol>
-<h3 id="八-指针和引用"><a href="#八-指针和引用" class="headerlink" title="八. 指针和引用"></a>八. 指针和引用</h3><ol>
-<li><p>编程中最重要的事：<strong>内存</strong>。这也就引出了指针的作用：<strong>管理和操作内存</strong></p>
-</li>
-<li><p><strong>指针的实质</strong>：一个存储内存地址的数字。 </p>
-</li>
-<li><p><strong>指针的类型</strong>：它源自于一个问题 - 在我们有了指针来表示内存地址后，我们还需要通过指针来对相应地址的数据进行操作。但是问题在于，<strong>我们如何知道要对地址所在处，多大的内存空间进行处理</strong>。</p>
-<p>这就是指针的类型意义所在：它规定了一个指针所处理的内存空间大小。</p>
-</li>
-<li><p>对于指针来说，<strong>0不是一个有效地址，即0&#x3D;&#x3D;nullptr</strong>。因此从理论上说，我们可以通过void *ptr &#x3D; 0的方式，来赋值一个空指针。</p>
-</li>
-<li><p>正常的指针赋值过程：int *ptr &#x3D; &a; 定义指针的时候，<strong>最好还是将*定义在紧挨类型的位置</strong>。但是注意：当定义int* a, b的时候，a的类型事指针，而b不是</p>
-</li>
-<li><p><strong>逆向使用指针</strong>：*ptr. </p>
-</li>
-<li><p><strong>引用必须引用已有的变量，不能为空，不占用内存</strong>，它们不是典型的变量</p>
-</li>
-<li><p><strong>引用的变量在初始化后，就不能再更改所该引用所指向的对象</strong></p>
-</li>
-<li><p>定义引用的时候，将&amp;靠近类型，因为此时的&amp;实质上是一个变量，不是一个运算符</p>
-</li>
-<li><p>标准的引用格式：int&amp; pa &#x3D; a;</p>
-</li>
-<li><p>引用的主要作用：用来对函数的变量进行赋值，标明该函数的变量是需要在函数内进行改变的，而不是单纯的值传递。</p>
-<p>void myfun(int&amp; a); 此时a的值会在函数体内发生改变</p>
-</li>
-</ol>
-<h3 id="九-类"><a href="#九-类" class="headerlink" title="九. 类"></a>九. 类</h3><ol>
-<li><p>C++并不强制使用面向对象对象，它相对中性</p>
-</li>
-<li><p>类：将功能和数据组合在一起</p>
-</li>
-<li><p>类的定义末尾要有分号（；）。</p>
-</li>
-<li><p>类(class)与结构体(struct)的区别，<strong>原理上说，只有一个区别：类中成员默认是私有的，结构体中成员默认是共有的。</strong></p>
-<p>对于c++来说，设计者保留struct的原因在于，他想保持对c的后向兼容性….</p>
-</li>
-<li><p><strong>struct和class在实际使用中的一般准则</strong>：</p>
-<p>仅用来表示大量数据的组合时，使用struct</p>
-<p>需要大量功能时，使用class</p>
-</li>
-<li><p>在c++中，类的成员变量和局部变量的区分并不明显，因此我们<strong>可以在成员变量前添加m_来象征其是成员变量</strong>，如m_message </p>
-</li>
-<li><p><strong>一般来说，可以将pubic variables, private variables, public methods, private methods作为分开的模块来写，方便区分</strong></p>
-</li>
-<li><p>static的用法：</p>
-<p>在类或结构体外，表示声明为static的符号，链接只能在同一个翻译单元内；</p>
-<p>在类或结构体内，表示声明为static的符号，是类的共有属性或方法，所有实例共享</p>
-<p>对于类内使用的static方法，其<strong>不能引用示例的变量</strong>，因为其是所有实例共有的，无法确定引用哪个实例的变量</p>
-<p>类的static变量可以通过类名引用，也可以通过实例引用或设置（只要它是public的）</p>
-</li>
-</ol>
-<p>​		<strong>类内使用static修饰的变量，在main函数中使用前需要进行声明！！！</strong> 如int Entity::x ; int Entity::y;</p>
-<p>​		<strong>局部静态（local static）</strong>：通过静态static修饰一个函数内的变量（不一定是函数，可以是任何一个作用域），其<strong>生存时间是整个程序运行时间，但是作用范围仅仅在函数（作用域）内</strong></p>
-<p>​		局部静态的注意：可能值得诟病的是，当局部变量使用在函数内的时候，它的运行逻辑看起来很像是多次重复定义，但<strong>实际上在第一次定义后，之后并没有重新定义</strong></p>
-<p>​		<strong>单例类的定义：</strong></p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231021203901303.png" alt="image-20231021203901303"></p>
-<p>​		单例的原因：使用static修饰，所有类共用一个s_Instance</p>
-<p>​		(<strong>这里需要配合构造方法私有化进行食用</strong>)</p>
-<p>​		<img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231021204351164.png" alt="image-20231021204351164"></p>
-<p>​		使用局部静态变量</p>
-<ol start="6">
-<li><p>构造函数的产生目的：对类的参数进行初始化，防止在类使用类的参数时，进而编译错误</p>
-<p>构造函数的格式: </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Entity&#123;</span><br><span class="line">	float X, Y;</span><br><span class="line">	Entity(float x, float y)&#123;</span><br><span class="line">		X = x;</span><br><span class="line">		Y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	Entity()&#123;</span><br><span class="line">		X = 0.0f;</span><br><span class="line">		Y = 0.0f;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<p>注意：</p>
-<ol>
-<li><strong>构造函数的名称必须与类名相同</strong></li>
-<li>在c++中，默认是由构造函数的，但是默认的构造函数什么都不做，<strong>所以必须进行初始化</strong></li>
-<li>构造函数可以重载，即参数的类型不同</li>
-<li>禁止构造函数的方法：i. 私有化 ii. 构造函数 &#x3D; delete</li>
-</ol>
-</li>
-<li><p><strong>构造函数初始化列表</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Entity()</span><br><span class="line">&#123;</span><br><span class="line">private: </span><br><span class="line">	int m_Name,</span><br><span class="line">	int x, y, z;</span><br><span class="line">public:</span><br><span class="line">	Entity()</span><br><span class="line">		: m_Name(&quot;Unknown&quot;), x(0), y(0), z(0)</span><br><span class="line">	&#123;&#125;</span><br><span class="line">	</span><br><span class="line">	Entity(const std::string&amp; name)</span><br><span class="line">		: m_Name(name)</span><br><span class="line">    &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意：</p>
-<ol>
-<li>构造函数初始化列表时，一定要<strong>按照类内参数声明的顺序来写</strong></li>
-<li>构造函数产生的原因：在构造函数中，出了参数赋值外，还可能伴随着其他的操作。初始化列表可以让构造函数更加简洁易懂</li>
-<li>对于构造函数来说，如果不适用构造函数初始化列表，<strong>那么我们在调用构造函数的时候实际上创建了两遍对象</strong>：第一遍创造空对象，第二遍创建赋值的对象。因此，对我们来说，<strong>最好到处都使用构造函数初始化列表</strong></li>
-</ol>
-</li>
-<li><p><strong>析构函数</strong>：卸载函数，删除内存时使用</p>
-<p>析构函数格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~Entity()&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>析构函数注意事项：</p>
-</li>
-<li><p>析构函数在对象销毁时调用。如果不是手动销毁的话，<strong>一般就是变量作用域（如函数）结束的使用调用</strong></p>
-</li>
-<li><p>为什么要有析构函数：在析构函数中销毁所有变量，<strong>尤其是手动在栈上分配的内存，它们需要手动清理</strong>。手动创建的对象是析构函数最大的应用情景</p>
-</li>
-<li><p>析构函数一般不手动调用</p>
-</li>
-<li><p><strong>继承</strong>：扩展现有类，提供新功能</p>
-<p>多态：一个对象，多个类型</p>
-<p>继承格式</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Player : public Entity</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>虚函数</strong>：允许在子类中重写方法, 标记词是visual</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Entity</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	visual std::string GetName() &#123;return &quot;Entity&quot;;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Player : public</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	std::string GetName() override &#123;return &quot;Player&quot;;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-<p>注意：</p>
-<ol>
-<li><p>如果在继承的子类中调用与父类相同的方法，那么会根据当前对象的类型，去调用对应的方法。</p>
-<p>如子类Player, 父类Entity, 对象p。如果使用一个指向对象p的指针，但是指针的类型是Entity*，那么调用的方法就会使父类中的对应方法</p>
-</li>
-<li><p>如果想要重写一个函数，就必须将基类中的基函数标记为虚函数</p>
-</li>
-<li><p><strong>子类中函数名后需要写override</strong>。这不是必须的，但最好这么做，可以起到提示的作用</p>
-</li>
-<li><p>虚函数的运行成本：v表内存；运行虚函数时，需要使用额外的操作</p>
-</li>
-<li><p>c++可以<strong>继承多个类</strong></p>
-</li>
-</ol>
-</li>
-<li><p>纯虚函数：<strong>与Java中的接口相同</strong>。在基类中顶一个没有实现的函数，然后<strong>强制子类去实现该函数</strong>。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">class Entity</span><br><span class="line">&#123;</span><br><span class="line">public:</span><br><span class="line">	virtual std::string GetName() = 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <meta name="description" content="1. 入门知识 环境变量Path：相当于在电脑中存储一些路径，因此在cmd命令界面中，不需要进入到相对应的路径中即可。  bin-存放各种工具命令，如javac和java；conf：存放相关配置文件；include：存放特定的头文件；jmods：存放各种模块；legl:存放各种授权文件；lib-存放工具的一些补充JAR包  程序运行分为两步：编译（javac xxx.java）；执行（java x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java tutorial">
+<meta property="og:url" content="http://example.com/2023/10/28/java-tutorial/index.html">
+<meta property="og:site_name" content="windbro的小黑屋">
+<meta property="og:description" content="1. 入门知识 环境变量Path：相当于在电脑中存储一些路径，因此在cmd命令界面中，不需要进入到相对应的路径中即可。  bin-存放各种工具命令，如javac和java；conf：存放相关配置文件；include：存放特定的头文件；jmods：存放各种模块；legl:存放各种授权文件；lib-存放工具的一些补充JAR包  程序运行分为两步：编译（javac xxx.java）；执行（java x">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20230915170631761.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20231008213613772.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20231009103309534.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20231009105355122.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20231009111558286.png">
+<meta property="article:published_time" content="2023-10-28T11:48:58.000Z">
+<meta property="article:modified_time" content="2023-10-28T11:54:17.839Z">
+<meta property="article:author" content="windbro">
+<meta property="article:tag" content="java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\learning_programs\hexo_programs\mywebsite\source\_posts\images\java-tutorial\image-20230915170631761.png">
 
-<p>注意：</p>
-<ol>
-<li><p>如果类全部由纯虚函数构成，即为<strong>接口</strong>，无法实例化</p>
-</li>
-<li><p><strong>只有实现了所有虚函数，才能实例化</strong></p>
-</li>
-<li><p>方法传参的类型，<strong>可以使用虚函数</strong>，从而要求对象拥有某个虚函数对应方法</p>
-</li>
-</ol>
-</li>
-<li><p><strong>可见性</strong>：可见性对程序实际运行方式完全没有影响，对程序性能也没有影响，只是为了更好地写代码或组织代码。</p>
-<p>c++中三个基础的可见性修饰符：<strong>private，public，protected</strong></p>
-</li>
-<li><p>private：只有在<strong>该类的作用域才能访问该变量或方法</strong>，<strong>可以加上它的友元friend</strong></p>
-<p>protected: 只有在<strong>该类和它的子类</strong>中可以访问</p>
-<p>public：所有对象均可访问</p>
-</li>
-<li><p>注意：</p>
-<ol>
-<li><strong>可见性与性能无关！</strong>这是有关<strong>代码阅读和维护</strong>的<strong>风格</strong>问题，它的作用是<strong>提醒程序员自己某个变量和方法应该怎么用</strong></li>
-<li>不要<strong>总是将一个变量都设为私有</strong>，它们只是特定的</li>
-</ol>
-</li>
-<li><p>类的实例化</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 这样实例化时可以的，因为我们有默认构造函数</span><br><span class="line">// 尽量使用该方式进行实例化</span><br><span class="line">Entity entity;</span><br><span class="line">Entyty entity = Entity(&quot;windbro&quot;)</span><br><span class="line"></span><br><span class="line">// 建立在堆上，这样超过作用域也不会被删除</span><br><span class="line">Entity* e = new Entity(&quot;windbro&quot;)</span><br></pre></td></tr></table></figure>
 
-<p>注意：</p>
-<ol>
-<li>在堆上建立类会更花时间，并且需要手动delete，因此<strong>尽量不要使用new的方式创建类</strong></li>
-<li>使用指针的时候，引用变量要使用-&gt;，但是使用直接的类对象的时候，使用.即可</li>
-<li>在堆上建立的情况：i. 创建的对象非常大 ii. 需要手动控制对象的作用域和存在时间</li>
-</ol>
-</li>
-</ol>
-<h3 id="十-枚举"><a href="#十-枚举" class="headerlink" title="十. 枚举"></a>十. 枚举</h3><ol>
-<li><p>枚举的一般格式：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231021204808894.png" alt="image-20231021204808894"></p>
-</li>
-<li><p>枚举注意：</p>
-<p>i. <strong>枚举的类型可以指定为char, int或其他，但是必须是整数类型，默认为int</strong>。</p>
-<p>ii. <strong>里面的A是可以直接作为变量被引用的</strong>，如：x &#x3D; A</p>
-<p>iii. 枚举内的变量与类中的其他变量没有区别，但注意<strong>不要与其他方法重名</strong>，否则在引用时会出错</p>
-</li>
-<li><p>枚举的作用：用来<strong>规定一个离散化的取值范围</strong>，从而防止某需要的变量被定义为其他值.</p>
-</li>
-</ol>
-<h3 id="十一-进阶数据类型"><a href="#十一-进阶数据类型" class="headerlink" title="十一. 进阶数据类型"></a>十一. 进阶数据类型</h3><ol>
-<li><p>数组：让大量的变量更加可以维护</p>
-</li>
-<li><p>注意：</p>
-<ol>
-<li><p><strong>指针</strong>是数组的基础</p>
-</li>
-<li><p>在<strong>release</strong>版本中，数组越界可能不会被报错，写入错误的内存空间</p>
-</li>
-<li><p>使用for循环的时候，一般都使用&lt;而不是小于等于，因为性能</p>
-</li>
-<li><p><strong>使用new创建的变量</strong>时创建在<strong>栈</strong>上面的，因此当函数结束后，其不会消失，同时<strong>也意味着需要手动删除delete</strong></p>
-</li>
-<li><p>对于数组的删除，需要使用<strong>delete[] arr</strong></p>
-</li>
-<li><p>当使用<strong>函数返回数组</strong>时，必须使用<strong>new</strong>，否则该数组会被自动删除（当数组在数组内创建时）</p>
-</li>
-<li><p>对于使用原始方法创建的数组，<strong>不能直接获得数组的大小，但是可以间接计算</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 原始方法</span><br><span class="line">int arr[6];</span><br><span class="line"># 间接计算</span><br><span class="line">int count = sizeof(a) / sizeof(int)</span><br><span class="line"># 解决方法</span><br><span class="line"># 这里不能直接使用size，因为c++不允许数组的长度被初始化为变量</span><br><span class="line">static const int size = 5;</span><br><span class="line">int arr[size];</span><br></pre></td></tr></table></figure>
+<link rel="canonical" href="http://example.com/2023/10/28/java-tutorial/">
 
-<p>但是对于在堆创建的数组，这样时错误的。</p>
-<p><strong>更好的解决方法：</strong>使用c++ array</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">std::array&lt;int, 5&gt; another;</span><br><span class="line">another.size();</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>字符串：编辑和处理文本所用，<strong>字符串就是字符数组</strong>，最简单的用法即为</p>
-</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">const char* name = &quot;windbro&quot;;</span><br></pre></td></tr></table></figure>
 
-<p>​		缺点：使用const修饰时，不能改变字符串；即使不适用const，也不能扩大字符串</p>
-<ol start="4">
-<li><p>注意</p>
-<ol>
-<li><p>字符串<strong>并不定义在堆上</strong>，所以delete是没有用的</p>
-</li>
-<li><p>字符串结尾有’\0’，如果我们在字符串中间写’\0’，往往会破坏该字符串的行为。比如strlen，它只会计算\0前面的字符串长度</p>
-<pre><code>3. 标准用法：string库，在string类型的构造方法中，它接收一个**const char*类型**的数据。
-</code></pre>
-<p>  所以在c++中使用字符串的时候，<strong>最好定义字符串的类型为const char</strong><em>, 而不是<strong>char</strong></em>，除非你想得到它的完全控制。但是<strong>最好不要使用该方法去修改字符串</strong>，因为这种修改方法在c++标准中是没有定义的，可能会引发错误</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># include&lt;string&gt;</span><br><span class="line"></span><br><span class="line"># 下述操作在main函数中</span><br><span class="line">std::string name = &quot;windbro&quot;;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>在string类型中，有对字符串的各种用法，如字符串的长度、添加和赋值等</p>
-<p>注意：</p>
-<ol>
-<li><p>string str &#x3D; “aaa” + “bbb” 是一个<strong>错误的字符串拼接方法</strong>，因为此时后两者相当于const char*，而不是字符串类型。</p>
-<p>为了解决该问题，我们可以将该操作分成两行来写，也可以将其中一个直接转换为string</p>
-</li>
-<li><p><strong>字符串的传递</strong>：如果直接将字符串传递给另一个函数，那么实际的操作是：先将该字符串复制，然后再将复制后的字符串传递给函数，但是<strong>字符串的复制过程是相当慢的！</strong></p>
-<p>因此，我们可以在函数中使用 const string&amp; str来传递字符串，这样直接传递引用，同时又保证了我们不会在函数中修改该字符串（<strong>字符串只读</strong>）</p>
-<pre><code>    3. 字符串字面量：字符串字面量存储在**内存的只读部分**，因此不能通过name[2] = &#39;a&#39;进行修改
-</code></pre>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">char* name = &quot;windbro&quot;</span><br></pre></td></tr></table></figure></li>
-</ol>
-</li>
-<li><p>几种其他的字符编码（默认u8, 否则需要在字符串前注明）：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025112651752.png" alt="image-20231025112651752"></p>
-<p>注意：</p>
-<ol>
-<li><p>字符串字面量不同于字符数组，前者不可编辑 ，后者可以</p>
-</li>
-<li><p>字符串字面量的一些常用方法：</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025113323304.png" alt="image-20231025113323304"></p>
-</li>
-</ol>
-</li>
-</ol>
-<p>​			s: 将字符串字面量转换为字符串</p>
-<p>​			R: 方便换行</p>
-<ol start="7">
-<li><p>智能指针：<strong>针对调用new的时候必须调用delete。</strong></p>
-<ul>
-<li><p>unique_ptr: 当对象超过作用域的时候，自动删除。<strong>unIque_ptr只能是唯一指向特定内存块的指针</strong> 。<strong>不能被复制，指向的内容不能被分享</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 这里不能使用 unique_ptr&lt;Entity&gt; entity = new Entity(), 因为隐式类型转换</span><br><span class="line">unique_ptr&lt;Entity&gt; entity(new Entity())</span><br><span class="line"></span><br><span class="line">// 更一般的写法, 处于异常安全考虑，这里创建了一个新的对象</span><br><span class="line">unique_ptr&lt;Entity&gt; entity = make_unique&lt;Entity&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>shared_ptr: 内存块可以被多个引用，<strong>但是如果引用量减到0，那么内存块删除</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">shared_ptr&lt;Entity&gt; sharedEntity = make_shared&lt;Entity&gt;();</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>weak_ptr: 可以使用shared_ptr赋值，<strong>它不会增加shared_ptr的计数，即不会确保指向对象的存活</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">weak_ptr&lt;Entity&gt; weakEntity = sharedEntity;</span><br></pre></td></tr></table></figure></li>
-</ul>
-</li>
-</ol>
-<p>​				优先级顺序：unique_ptr &gt; shared_ptr</p>
-<ol start="8">
-<li><p>动态数组：**(特别是vector)**. 数据的大小不确定，随着放置元素的数量而增长。</p>
-<p>原理：当数组的长度超过最初设定的值时，创建一个更大的数组，将所有数据复制在这里，并删除最初的数组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 不同于java，vector中的类型可以是基本数据类型，也可以是非基本数据类型</span><br><span class="line">vector&lt;int&gt; vertices;</span><br></pre></td></tr></table></figure>
 
-<p>注意：</p>
-<ol>
-<li>一般来说，<strong>存储对象比存储指针更优</strong>，因为vector中对象的存储是连续的</li>
-<li>常用方法：push_back(); size(); erase(vec.begin() + 1);</li>
-</ol>
-</li>
-<li><p>vector优化：针对vector中的复制原理，我们可以首先自己写一个类，然后重写类的拷贝，查看vector在什么时候发生了拷贝。</p>
-<p>一个简单的拷贝优化过程：<img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025200855629.png" alt="image-20231025200855629"></p>
-<p>优化前：使用了6次copy，其中三次是因为每次我们push_back时，vector的长度都在增长，因此我们进行了vector的复制；另外三次是因为我们在push_back的过程中，我们先定义一个Vertex，然后重新赋值</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\c-tutorial\image-20231025200837057.png" alt="image-20231025200837057"></p>
-<p> 优化后：reserve首先预定三个位置，然后通过<strong>emplace_back</strong>直接进行参数列表构造，而不是push_back</p>
-</li>
-</ol>
-<p>​		</p>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>c++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>java tutorial</title>
-    <url>/2023/10/28/java-tutorial/</url>
-    <content><![CDATA[<h3 id="1-入门知识"><a href="#1-入门知识" class="headerlink" title="1. 入门知识"></a>1. 入门知识</h3><ol>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/10/28/java-tutorial/","path":"2023/10/28/java-tutorial/","title":"java tutorial"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>java tutorial | windbro的小黑屋</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">windbro的小黑屋</p>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/logo.jpg" alt="windbro的小黑屋">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%85%A5%E9%97%A8%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">1. 入门知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%B0%8F%E6%A6%82%E5%BF%B5"><span class="nav-number">2.</span> <span class="nav-text">2. 小概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">3.</span> <span class="nav-text">3. 运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.</span> <span class="nav-text">4. 流程控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E6%95%B0%E7%BB%84"><span class="nav-number">5.</span> <span class="nav-text">5. 数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">6. 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">7.</span> <span class="nav-text">7. 面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-API-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">8.</span> <span class="nav-text">8. API &amp; 字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-%E9%9B%86%E5%90%88"><span class="nav-number">9.</span> <span class="nav-text">9. 集合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-static"><span class="nav-number">10.</span> <span class="nav-text">10. static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-%E7%BB%A7%E6%89%BF"><span class="nav-number">11.</span> <span class="nav-text">11. 继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-%E5%A4%9A%E6%80%81"><span class="nav-number">12.</span> <span class="nav-text">12. 多态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-%E5%8C%85%E4%B8%8Efinal"><span class="nav-number">13.</span> <span class="nav-text">13. 包与final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-%E6%9D%83%E9%99%90%E4%BF%AE%E9%A5%B0%E7%AC%A6%E5%92%8C%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="nav-number">14.</span> <span class="nav-text">14. 权限修饰符和代码块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">15.</span> <span class="nav-text">15. 抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-%E6%8E%A5%E5%8F%A3"><span class="nav-number">16.</span> <span class="nav-text">16. 接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">17.</span> <span class="nav-text">17. 内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-%E6%B8%B8%E6%88%8F%E6%89%93%E5%8C%85exe"><span class="nav-number">18.</span> <span class="nav-text">18. 游戏打包exe</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">19.</span> <span class="nav-text">*IDEA快捷键</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">windbro</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/java-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="java tutorial | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java tutorial
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-28 19:48:58 / 修改时间：19:54:17" itemprop="dateCreated datePublished" datetime="2023-10-28T19:48:58+08:00">2023-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/code/" itemprop="url" rel="index"><span itemprop="name">code</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="1-入门知识"><a href="#1-入门知识" class="headerlink" title="1. 入门知识"></a>1. 入门知识</h3><ol>
 <li><p>环境变量Path：相当于在电脑中存储一些路径，因此在cmd命令界面中，不需要进入到相对应的路径中即可。</p>
 </li>
 <li><p>bin-存放各种工具命令，如javac和java；conf：存放相关配置文件；include：存放特定的头文件；jmods：存放各种模块；legl:存放各种授权文件；lib-存放工具的一些补充JAR包</p>
@@ -1064,12 +831,87 @@
 </li>
 <li></li>
 </ol>
-]]></content>
-      <categories>
-        <category>code</category>
-      </categories>
-      <tags>
-        <tag>java</tag>
-      </tags>
-  </entry>
-</search>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/java/" rel="tag"># java</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/28/c-tutorial/" rel="prev" title="c++ tutorial">
+                  <i class="fa fa-angle-left"></i> c++ tutorial
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">windbro</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
