@@ -28,19 +28,18 @@
 <p><a href="https://zhuanlan.zhihu.com/p/60578464">https://zhuanlan.zhihu.com/p/60578464</a></p>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>code-tutorial</category>
       </categories>
       <tags>
         <tag>hexo</tag>
+        <tag>tutorial</tag>
       </tags>
   </entry>
   <entry>
     <title>c++ tutorial</title>
     <url>/2023/10/28/c-tutorial/</url>
-    <content><![CDATA[<ol>
+    <content><![CDATA[<h2 id="vs使用技巧"><a href="#vs使用技巧" class="headerlink" title="vs使用技巧"></a>vs使用技巧</h2><h3 id="一-界面"><a href="#一-界面" class="headerlink" title="一. 界面"></a>一. 界面</h3><ol>
 <li>solution：一些project相互联系形成</li>
-</ol>
-<h2 id="vs使用技巧"><a href="#vs使用技巧" class="headerlink" title="vs使用技巧"></a>vs使用技巧</h2><h3 id="一-界面"><a href="#一-界面" class="headerlink" title="一. 界面"></a>一. 界面</h3><ol>
 <li>不要依赖error窗口，最好去观察<strong>output窗口</strong></li>
 <li>project中的Header Files等<strong>并不实际存在与之对应的文件夹，它们只是filter，不是directory!</strong> 我们可以使用Show All Files，使其展现实际的目录</li>
 <li>因此，我们可以在Show All Files后，创建<strong>src</strong>文件夹来存储所有的<strong>cpp文件和头文件</strong>，并不会影响原本的Source Files等filter中的文件架构</li>
@@ -472,10 +471,10 @@
 <p>​		</p>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>code-tutorial</category>
       </categories>
       <tags>
-        <tag>c++</tag>
+        <tag>c++ tutorial</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,10 +1065,10 @@
 </ol>
 ]]></content>
       <categories>
-        <category>code</category>
+        <category>code-tutorial</category>
       </categories>
       <tags>
-        <tag>java</tag>
+        <tag>java tutorial</tag>
       </tags>
   </entry>
 </search>
