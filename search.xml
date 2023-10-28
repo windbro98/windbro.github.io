@@ -3,7 +3,7 @@
   <entry>
     <title>Hexo tutorial</title>
     <url>/2023/10/28/Hexo-tutorial/</url>
-    <content><![CDATA[<h2 id="一-Hexo日常发布文章-1"><a href="#一-Hexo日常发布文章-1" class="headerlink" title="一. Hexo日常发布文章^1"></a>一. Hexo日常发布文章<a href="https://zhuanlan.zhihu.com/p/60578464">^1</a></h2><ol>
+    <content><![CDATA[<h2 id="一-Hexo日常发布文章-https-zhuanlan-zhihu-com-p-60578464"><a href="#一-Hexo日常发布文章-https-zhuanlan-zhihu-com-p-60578464" class="headerlink" title="一. Hexo日常发布文章[^https://zhuanlan.zhihu.com/p/60578464]"></a>一. Hexo日常发布文章[^<a href="https://zhuanlan.zhihu.com/p/60578464]">https://zhuanlan.zhihu.com/p/60578464]</a></h2><ol>
 <li><p>进入博客所在目录，创建博文：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;BlogName&quot;</span><br></pre></td></tr></table></figure>
 
