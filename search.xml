@@ -22,8 +22,8 @@
 <p>​		然后修改_config.yml的theme为新主题名称next，发布。</p>
 <h2 id="四-常用命令"><a href="#四-常用命令" class="headerlink" title="四. 常用命令"></a>四. 常用命令</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;name&quot;       # 新建文章</span><br><span class="line">hexo new page &quot;name&quot;  # 新建页面</span><br><span class="line">hexo g                # 生成页面</span><br><span class="line">hexo d                # 部署</span><br><span class="line">hexo g -d             # 生成页面并部署</span><br><span class="line">hexo s                # 本地预览</span><br><span class="line">hexo clean            # 清除缓存和已生成的静态文件</span><br><span class="line">hexo help             # 帮助</span><br></pre></td></tr></table></figure>
 
-
-
+<h2 id="五-主题next文档"><a href="#五-主题next文档" class="headerlink" title="五. 主题next文档"></a>五. 主题next文档</h2><p>​		中文文档：<a href="https://hexo-next.readthedocs.io/zh-cn/latest/">https://hexo-next.readthedocs.io/zh-cn/latest/</a></p>
+<p>​		英文文档：<a href="https://theme-next.js.org/docs/">https://theme-next.js.org/docs/</a></p>
 <p>参考文献：</p>
 <p><a href="https://zhuanlan.zhihu.com/p/60578464">https://zhuanlan.zhihu.com/p/60578464</a></p>
 ]]></content>
