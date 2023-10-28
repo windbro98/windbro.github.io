@@ -3,7 +3,7 @@
   <entry>
     <title>Hexo tutorial</title>
     <url>/2023/10/28/Hexo-tutorial/</url>
-    <content><![CDATA[<h2 id="Hexo使用基本教程"><a href="#Hexo使用基本教程" class="headerlink" title="Hexo使用基本教程"></a>Hexo使用基本教程</h2><h2 id="一-Hexo日常发布文章"><a href="#一-Hexo日常发布文章" class="headerlink" title="一. Hexo日常发布文章"></a>一. Hexo日常发布文章</h2><ol>
+    <content><![CDATA[<h1 id="Hexo使用基本教程"><a href="#Hexo使用基本教程" class="headerlink" title="Hexo使用基本教程"></a>Hexo使用基本教程</h1><h2 id="一-Hexo日常发布文章"><a href="#一-Hexo日常发布文章" class="headerlink" title="一. Hexo日常发布文章"></a>一. Hexo日常发布文章</h2><ol>
 <li><p>进入博客所在目录，创建博文：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;BlogName&quot;</span><br></pre></td></tr></table></figure>
 
