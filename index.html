@@ -148,13 +148,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
@@ -171,6 +171,268 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/02/ubuntu%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%BB%BA%E7%AB%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/02/ubuntu%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E5%BB%BA%E7%AB%8B/" class="post-title-link" itemprop="url">ubuntu桌面快捷方式建立</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-02 16:11:43 / 修改时间：16:24:40" itemprop="dateCreated datePublished" datetime="2023-11-02T16:11:43+08:00">2023-11-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><strong>这里以matlab的桌面快捷建立为例</strong></p>
+<h4 id="1-下载图标"><a href="#1-下载图标" class="headerlink" title="1. 下载图标"></a>1. 下载图标</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wget http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png -O /usr/share/icons/matlab.png</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-创建空的快捷方式"><a href="#2-创建空的快捷方式" class="headerlink" title="2. 创建空的快捷方式"></a>2. 创建空的快捷方式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">touch</span> /user/share/applications/matlab.desktop</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-编辑快捷方式"><a href="#3-编辑快捷方式" class="headerlink" title="3. 编辑快捷方式"></a>3. 编辑快捷方式</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里的vim可以替换为任意linux文本编译软件</span></span><br><span class="line">sudo vim /user/share/applications/matlab.desktop</span><br></pre></td></tr></table></figure>
+
+<p>填写如下述内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># !/usr/bin/env 代表到环境变量下寻找命令解释器</span></span><br><span class="line"><span class="comment"># xdf-open 代表双击打开文件</span></span><br><span class="line"><span class="comment">#!/usr/bin/env xdg-open</span></span><br><span class="line"></span><br><span class="line">[Desktop Entry]</span><br><span class="line">Type=Application</span><br><span class="line">Terminal=<span class="literal">false</span></span><br><span class="line">Exec=/home/MATLAB_R2017a/bin/matlab -desktop   //matlab路径 使用时删掉注释</span><br><span class="line">Name=MATLAB</span><br><span class="line">Icon=/usr/share/icons/matlab.png        //matlab图标路径</span><br><span class="line">Comment=Scientific computing environment</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-启动matlab"><a href="#4-启动matlab" class="headerlink" title="4. 启动matlab"></a>4. 启动matlab</h4><p>matlab快捷方式的路径在&#x2F;usr&#x2F;share&#x2F;applications&#x2F;matlab.desktop，复制到桌面双击，即可启动</p>
+<p><strong>提示no writing permission on directory&#x2F;xxx&#x2F;.matlab的解决方法：</strong></p>
+<p>删掉该文件夹，重新启动即可</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jb51.net/article/131649.htm#:~:text=%E5%9C%A8ubuntu16.04%E4%B8%8A%E5%88%9B%E5%BB%BAmatlab%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F">https://www.jb51.net/article/131649.htm#:~:text=%E5%9C%A8ubuntu16.04%E4%B8%8A%E5%88%9B%E5%BB%BAmatlab%E7%9A%84%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/01/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%B6%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/11/01/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%B6%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">ubuntu系统盘制作与使用</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-11-01 16:35:58" itemprop="dateCreated datePublished" datetime="2023-11-01T16:35:58+08:00">2023-11-01</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/GAN-training-tricks/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/28/GAN-training-tricks/" class="post-title-link" itemprop="url">GAN training tricks</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-28 20:38:34 / 修改时间：21:07:21" itemprop="dateCreated datePublished" datetime="2023-10-28T20:38:34+08:00">2023-10-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/GAN/" itemprop="url" rel="index"><span itemprop="name">GAN</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="GAN训练面对的问题"><a href="#GAN训练面对的问题" class="headerlink" title="GAN训练面对的问题"></a>GAN训练面对的问题</h3><ol>
+<li><p>生成器和判别器同时训练，这导致一方的优化以另一方为代价。</p>
+<p><em>But with a GAN, every step taken down the hill changes the entire landscape a little.</em></p>
+</li>
+<li><p>常见的训练失败典例：</p>
+<ul>
+<li>在输入多种类别图片的情况下，Generator只生成其中一种甚至是其中一张图片，后者被称为<em>mode collapse</em></li>
+</ul>
+</li>
+</ol>
+<h2 id="GAN训练技巧"><a href="#GAN训练技巧" class="headerlink" title="GAN训练技巧"></a>GAN训练技巧</h2><ol>
+<li><p>现在没有很好的指标来标明GAN是否训练良好，因此最好的办法是在训练过程中观察生成图片，做出主观判断。</p>
+</li>
+<li><p>GAN的稳定性需要模型结构和超参数被精心选择，因此这不是一个容易调整的模块，主要架构参考最早的CNN GAN:</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\Example-of-the-Generator-Model-Architecture-for-the-DCGAN-1024x440.png" alt="Example of the Generator Model Architecture for the DCGAN"></p>
+<p>设计GAN网络架构的建议：</p>
+<p><img src="https://machinelearningmastery.com/wp-content/uploads/2019/04/Summary-of-Architectural-Guidelines-for-Training-Stable-Deep-Convolutional-Generative-Adversarial-Networks-1024x279.png" alt="Summary of Architectural Guidelines for Training Stable Deep Convolutional Generative Adversarial Networks"></p>
+</li>
+</ol>
+<p>​		<img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205713514.png" alt="image-20231028205713514"></p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205854631.png" alt="image-20231028205854631"></p>
+<p>参考文献：</p>
+<p><a target="_blank" rel="noopener" href="https://machinelearningmastery.com/how-to-train-stable-generative-adversarial-networks/">https://machinelearningmastery.com/how-to-train-stable-generative-adversarial-networks/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
