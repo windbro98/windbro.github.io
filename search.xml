@@ -1204,7 +1204,27 @@
   <entry>
     <title>ubuntu系统盘制作与使用</title>
     <url>/2023/11/01/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%B6%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="一-ubuntu系统盘的制作"><a href="#一-ubuntu系统盘的制作" class="headerlink" title="一. ubuntu系统盘的制作"></a>一. ubuntu系统盘的制作</h3><h4 id="1-下载ubuntu-iso镜像"><a href="#1-下载ubuntu-iso镜像" class="headerlink" title="1. 下载ubuntu iso镜像"></a>1. 下载ubuntu iso镜像</h4><p>国内<a href="https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/">清华源镜像网站</a>,国外<a href="https://ubuntu.com/#download">官方网站</a> 国内清华源</p>
+<h4 id="2-使用Rufus软件，"><a href="#2-使用Rufus软件，" class="headerlink" title="2. 使用Rufus软件，"></a>2. 使用Rufus软件，</h4><p>默认配置如下：</p>
+<img src="D:\learning_programs\hexo_programs\mywebsite\source\_posts\images\ubuntu系统盘制作与使用\image-20231101164024900.png" alt="image-20231101164024900" style="zoom: 80%;" />
+
+<p>​		随后，U盘内的内容如下所示：</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\ubuntu系统盘制作与使用\image-20231101164112802.png" alt="image-20231101164112802"></p>
+<h4 id="3-U盘启动"><a href="#3-U盘启动" class="headerlink" title="3. U盘启动"></a>3. U盘启动</h4><p>进入bios界面，设置启动优先级为U盘最高，随后重启。</p>
+<h4 id="4-安装ubuntu"><a href="#4-安装ubuntu" class="headerlink" title="4. 安装ubuntu"></a>4. 安装ubuntu</h4><p>根据提示窗口，安装ubuntu即可，建议安装英文系统</p>
+<h3 id="二-ubuntu系统的删除（双ubuntu系统）"><a href="#二-ubuntu系统的删除（双ubuntu系统）" class="headerlink" title="二. ubuntu系统的删除（双ubuntu系统）"></a>二. ubuntu系统的删除（双ubuntu系统）</h3><p><strong>非常推荐跟随流程<a href="https://help.ubuntu.com/community/OS-Uninstaller%E8%BF%9B%E8%A1%8C%EF%BC%8C%E9%80%9A%E7%94%A8%E6%80%A7%E5%BE%88%E5%BC%BA%EF%BC%8C%E4%B8%8B%E9%9D%A2%E7%9A%84%E5%8F%AA%E8%83%BD%E7%AE%97%E6%98%AF%E4%B8%AD%E6%96%87%E7%BF%BB%E8%AF%91%E3%80%82">https://help.ubuntu.com/community/OS-Uninstaller进行，通用性很强，下面的只能算是中文翻译。</a></strong></p>
+<h4 id="0-optional-使用ubuntu试用"><a href="#0-optional-使用ubuntu试用" class="headerlink" title="0. (optional) 使用ubuntu试用"></a>0. (optional) 使用ubuntu试用</h4><p>直接使用系统盘，在安装界面点击试用，一路向下即可</p>
+<h4 id="1-安装os-uninstaller"><a href="#1-安装os-uninstaller" class="headerlink" title="1. 安装os-uninstaller"></a>1. 安装os-uninstaller</h4><p>首先添加repository:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo add-apt-repository ppa:yannubuntu/boot-repair</span><br></pre></td></tr></table></figure>
+
+<p>随后更新库并下载：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo apt update;</span><br><span class="line">sudo apt install -y os-uninstaller &amp;&amp; os-uninstaller</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-使用os-uninstaller"><a href="#2-使用os-uninstaller" class="headerlink" title="2. 使用os-uninstaller"></a>2. 使用os-uninstaller</h4><p>os-uninstaller是图形化界面，直接进行remove即可</p>
+<h4 id="3-更新系统引导"><a href="#3-更新系统引导" class="headerlink" title="3. 更新系统引导"></a>3. 更新系统引导</h4><p>直接使用grub进行修复即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo update-grub</span><br></pre></td></tr></table></figure>
+
+]]></content>
   </entry>
   <entry>
     <title>ubuntu桌面快捷方式建立</title>
