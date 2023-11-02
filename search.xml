@@ -1238,7 +1238,7 @@
     <content><![CDATA[<p><strong>这里以matlab的桌面快捷建立为例</strong></p>
 <h4 id="1-下载图标"><a href="#1-下载图标" class="headerlink" title="1. 下载图标"></a>1. 下载图标</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo wget http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png -O /usr/share/icons/matlab.png</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-创建空的快捷方式"><a href="#2-创建空的快捷方式" class="headerlink" title="2. 创建空的快捷方式"></a>2. 创建空的快捷方式</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">touch</span> /user/share/applications/matlab.desktop</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建空的快捷方式"><a href="#2-创建空的快捷方式" class="headerlink" title="2. 创建空的快捷方式"></a>2. 创建空的快捷方式</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">touch</span> /usr/share/applications/matlab.desktop</span><br></pre></td></tr></table></figure>
 
 <h4 id="3-编辑快捷方式"><a href="#3-编辑快捷方式" class="headerlink" title="3. 编辑快捷方式"></a>3. 编辑快捷方式</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 这里的vim可以替换为任意linux文本编译软件</span></span><br><span class="line">sudo vim /user/share/applications/matlab.desktop</span><br></pre></td></tr></table></figure>
 
