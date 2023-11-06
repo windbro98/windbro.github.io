@@ -1263,6 +1263,11 @@
 <li><p>保存tensor数据：<code>torch.save(my_tensor, &#39;xxx.pt&#39;)</code></p>
 <p>读取tensor数据：<code>my_tensor = torch.load(&#39;xxx.pt&#39;)</code></p>
 </li>
+<li><p>产生均值为0，方差为1的高斯分布：<code>num_randn = torch.randn(2, 3)</code></p>
+<p>产生[0, 1)之间的均匀分布： <code>num_rand = torch.rand(2,3)</code> </p>
+</li>
+<li><p>保存图片：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from torchvision.utils import save_image</span><br><span class="line">save_image(tensor, filename)</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="偶尔会用到的torch语句"><a href="#偶尔会用到的torch语句" class="headerlink" title="偶尔会用到的torch语句"></a>偶尔会用到的torch语句</h3><ol>
 <li><p>完整输出tensor的数据，而不是折叠过的：<code>torch.set_printoptions(profile=&#39;full&#39;)</code></p>
@@ -1275,6 +1280,54 @@
       </categories>
       <tags>
         <tag>pytorch code-toturail</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>linux-tutorial</title>
+    <url>/2023/11/06/linux-tutorial/</url>
+    <content><![CDATA[<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="1-gpu相关"><a href="#1-gpu相关" class="headerlink" title="1. gpu相关"></a>1. gpu相关</h4><ul>
+<li><p>gpu删除进程</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// (建议不用，经常看不到) 查看所有跑在GPU上的程序</span><br><span class="line">nvidia-smi</span><br><span class="line">// (建议使用) 查看gpu上进程信息</span><br><span class="line">fuser -v /dev/nvidia*</span><br><span class="line">// 查看进程的详细信息，包括文件的位置信息</span><br><span class="line">ll /proc/[pid]</span><br><span class="line">// 删除进程</span><br><span class="line">kill -9 [pid]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="2-系统相关"><a href="#2-系统相关" class="headerlink" title="2. 系统相关"></a>2. 系统相关</h4><ul>
+<li><p>查询文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">find [查询目录] -name [查询文件]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件夹前10个文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ls | head -n 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件夹下文件数量（不包含目录）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>查看文件夹下目录数量（不包含文件）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>查看文件夹下文件数量（包含子目录中文件）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lR | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="torrent下载"><a href="#torrent下载" class="headerlink" title="torrent下载"></a>torrent下载</h4><p>这里使用tget进行下载</p>
+<ol>
+<li><p>安装npm和tget</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt install -y npm</span><br><span class="line">npm install -g t-get</span><br><span class="line">tget &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+      <categories>
+        <category>code-toturial</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python toturial</title>
+    <url>/2023/11/05/python-toturial/</url>
+    <content><![CDATA[<h3 id="1-常用代码"><a href="#1-常用代码" class="headerlink" title="1. 常用代码"></a>1. 常用代码</h3><h4 id="1-1-文件遍历"><a href="#1-1-文件遍历" class="headerlink" title="1.1 文件遍历"></a>1.1 文件遍历</h4><p>遍历文件夹, 获取所有<strong>目录和文件</strong>，用于<strong>迭代</strong>： <code>os.walk(parentDir)</code>. 这里的遍历不包含子目录，返回的dirs和files都是列表。例：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line">path = &#x27;/home/jhxie/Workspace/namesort&#x27;</span><br><span class="line">for root,dirs,files in os.walk(path):</span><br><span class="line">        print(root)</span><br><span class="line">        print(dirs)</span><br><span class="line">        print(files)</span><br></pre></td></tr></table></figure>
+
+<p>获取文件夹下所有<strong>目录和文件</strong>，生成<strong>列表</strong>：<code>parentFilesAndRoots = os.listdir(parentDir)</code></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
       </tags>
   </entry>
 </search>

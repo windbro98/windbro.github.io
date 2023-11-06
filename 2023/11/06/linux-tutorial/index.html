@@ -20,32 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="GAN训练面对的问题 生成器和判别器同时训练，这导致一方的优化以另一方为代价。 But with a GAN, every step taken down the hill changes the entire landscape a little.  常见的训练失败典例：  在输入多种类别图片的情况下，Generator只生成其中一种甚至是其中一张图片，后者被称为mode collapse">
+    <meta name="description" content="常用命令1. gpu相关 gpu删除进程 12345678&#x2F;&#x2F; (建议不用，经常看不到) 查看所有跑在GPU上的程序nvidia-smi&#x2F;&#x2F; (建议使用) 查看gpu上进程信息fuser -v &#x2F;dev&#x2F;nvidia*&#x2F;&#x2F; 查看进程的详细信息，包括文件的位置信息ll &#x2F;proc&#x2F;[pid]&#x2F;&#x2F; 删除进程kill -9 [pid]  2. 系统相关 查询文件 1find [查询目录] -name [">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GAN training tricks">
-<meta property="og:url" content="http://example.com/2023/10/28/GAN-training-tricks/index.html">
+<meta property="og:title" content="linux-tutorial">
+<meta property="og:url" content="http://example.com/2023/11/06/linux-tutorial/index.html">
 <meta property="og:site_name" content="windbro的小黑屋">
-<meta property="og:description" content="GAN训练面对的问题 生成器和判别器同时训练，这导致一方的优化以另一方为代价。 But with a GAN, every step taken down the hill changes the entire landscape a little.  常见的训练失败典例：  在输入多种类别图片的情况下，Generator只生成其中一种甚至是其中一张图片，后者被称为mode collapse">
+<meta property="og:description" content="常用命令1. gpu相关 gpu删除进程 12345678&#x2F;&#x2F; (建议不用，经常看不到) 查看所有跑在GPU上的程序nvidia-smi&#x2F;&#x2F; (建议使用) 查看gpu上进程信息fuser -v &#x2F;dev&#x2F;nvidia*&#x2F;&#x2F; 查看进程的详细信息，包括文件的位置信息ll &#x2F;proc&#x2F;[pid]&#x2F;&#x2F; 删除进程kill -9 [pid]  2. 系统相关 查询文件 1find [查询目录] -name [">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\Example-of-the-Generator-Model-Architecture-for-the-DCGAN-1024x440.png">
-<meta property="og:image" content="https://machinelearningmastery.com/wp-content/uploads/2019/04/Summary-of-Architectural-Guidelines-for-Training-Stable-Deep-Convolutional-Generative-Adversarial-Networks-1024x279.png">
-<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205713514.png">
-<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205854631.png">
-<meta property="article:published_time" content="2023-10-28T12:38:34.000Z">
-<meta property="article:modified_time" content="2023-10-28T13:07:21.585Z">
+<meta property="article:published_time" content="2023-11-06T07:32:12.000Z">
+<meta property="article:modified_time" content="2023-11-06T13:43:02.079Z">
 <meta property="article:author" content="windbro">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\Example-of-the-Generator-Model-Architecture-for-the-DCGAN-1024x440.png">
 
 
-<link rel="canonical" href="http://example.com/2023/10/28/GAN-training-tricks/">
+<link rel="canonical" href="http://example.com/2023/11/06/linux-tutorial/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/10/28/GAN-training-tricks/","path":"2023/10/28/GAN-training-tricks/","title":"GAN training tricks"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/06/linux-tutorial/","path":"2023/11/06/linux-tutorial/","title":"linux-tutorial"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>GAN training tricks | windbro的小黑屋</title>
+<title>linux-tutorial | windbro的小黑屋</title>
   
 
 
@@ -145,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAN%E8%AE%AD%E7%BB%83%E9%9D%A2%E5%AF%B9%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">GAN训练面对的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7"><span class="nav-number"></span> <span class="nav-text">GAN训练技巧</span></a></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-gpu%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">1. gpu相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">2. 系统相关</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B6%E5%B0%94%E7%94%A8%E5%88%B0%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">偶尔用到的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#torrent%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">torrent下载</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -195,7 +191,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/28/GAN-training-tricks/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/06/linux-tutorial/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -208,12 +204,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="GAN training tricks | windbro的小黑屋">
+      <meta itemprop="name" content="linux-tutorial | windbro的小黑屋">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          GAN training tricks
+          linux-tutorial
         </h1>
 
         <div class="post-meta-container">
@@ -225,7 +221,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-10-28 20:38:34 / 修改时间：21:07:21" itemprop="dateCreated datePublished" datetime="2023-10-28T20:38:34+08:00">2023-10-28</time>
+      <time title="创建时间：2023-11-06 15:32:12 / 修改时间：21:43:02" itemprop="dateCreated datePublished" datetime="2023-11-06T15:32:12+08:00">2023-11-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -233,7 +229,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/GAN/" itemprop="url" rel="index"><span itemprop="name">GAN</span></a>
+          <a href="/categories/code-toturial/" itemprop="url" rel="index"><span itemprop="name">code-toturial</span></a>
         </span>
     </span>
 
@@ -246,29 +242,31 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h3 id="GAN训练面对的问题"><a href="#GAN训练面对的问题" class="headerlink" title="GAN训练面对的问题"></a>GAN训练面对的问题</h3><ol>
-<li><p>生成器和判别器同时训练，这导致一方的优化以另一方为代价。</p>
-<p><em>But with a GAN, every step taken down the hill changes the entire landscape a little.</em></p>
-</li>
-<li><p>常见的训练失败典例：</p>
-<ul>
-<li>在输入多种类别图片的情况下，Generator只生成其中一种甚至是其中一张图片，后者被称为<em>mode collapse</em></li>
+    <div class="post-body" itemprop="articleBody"><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><h4 id="1-gpu相关"><a href="#1-gpu相关" class="headerlink" title="1. gpu相关"></a>1. gpu相关</h4><ul>
+<li><p>gpu删除进程</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// (建议不用，经常看不到) 查看所有跑在GPU上的程序</span><br><span class="line">nvidia-smi</span><br><span class="line">// (建议使用) 查看gpu上进程信息</span><br><span class="line">fuser -v /dev/nvidia*</span><br><span class="line">// 查看进程的详细信息，包括文件的位置信息</span><br><span class="line">ll /proc/[pid]</span><br><span class="line">// 删除进程</span><br><span class="line">kill -9 [pid]</span><br></pre></td></tr></table></figure></li>
 </ul>
+<h4 id="2-系统相关"><a href="#2-系统相关" class="headerlink" title="2. 系统相关"></a>2. 系统相关</h4><ul>
+<li><p>查询文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [查询目录] -name [查询文件]</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>查看文件夹前10个文件</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls | head -n 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看文件夹下文件数量（不包含目录）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>查看文件夹下目录数量（不包含文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+
+<p>查看文件夹下文件数量（包含子目录中文件）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lR | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="torrent下载"><a href="#torrent下载" class="headerlink" title="torrent下载"></a>torrent下载</h4><p>这里使用tget进行下载</p>
+<ol>
+<li><p>安装npm和tget</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install -y npm</span><br><span class="line">npm install -g t-get</span><br><span class="line">tget &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="GAN训练技巧"><a href="#GAN训练技巧" class="headerlink" title="GAN训练技巧"></a>GAN训练技巧</h2><ol>
-<li><p>现在没有很好的指标来标明GAN是否训练良好，因此最好的办法是在训练过程中观察生成图片，做出主观判断。</p>
-</li>
-<li><p>GAN的稳定性需要模型结构和超参数被精心选择，因此这不是一个容易调整的模块，主要架构参考最早的CNN GAN:</p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\Example-of-the-Generator-Model-Architecture-for-the-DCGAN-1024x440.png" alt="Example of the Generator Model Architecture for the DCGAN"></p>
-<p>设计GAN网络架构的建议：</p>
-<p><img src="https://machinelearningmastery.com/wp-content/uploads/2019/04/Summary-of-Architectural-Guidelines-for-Training-Stable-Deep-Convolutional-Generative-Adversarial-Networks-1024x279.png" alt="Summary of Architectural Guidelines for Training Stable Deep Convolutional Generative Adversarial Networks"></p>
-</li>
-</ol>
-<p>​		<img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205713514.png" alt="image-20231028205713514"></p>
-<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\GAN-training-tricks\image-20231028205854631.png" alt="image-20231028205854631"></p>
-<p>参考文献：</p>
-<p><a target="_blank" rel="noopener" href="https://machinelearningmastery.com/how-to-train-stable-generative-adversarial-networks/">https://machinelearningmastery.com/how-to-train-stable-generative-adversarial-networks/</a></p>
 
     </div>
 
@@ -277,19 +275,19 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/10/28/markdown-tutorial/" rel="prev" title="markdown tutorial">
-                  <i class="fa fa-angle-left"></i> markdown tutorial
+                <a href="/2023/11/05/python-toturial/" rel="prev" title="python toturial">
+                  <i class="fa fa-angle-left"></i> python toturial
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/11/01/ubuntu%E7%B3%BB%E7%BB%9F%E7%9B%98%E5%88%B6%E4%BD%9C%E4%B8%8E%E4%BD%BF%E7%94%A8/" rel="next" title="ubuntu系统盘制作与使用">
-                  ubuntu系统盘制作与使用 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
