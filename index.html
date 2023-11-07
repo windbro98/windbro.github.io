@@ -212,9 +212,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-06 15:32:12 / 修改时间：21:43:02" itemprop="dateCreated datePublished" datetime="2023-11-06T15:32:12+08:00">2023-11-06</time>
+      <time title="创建时间：2023-11-06 15:32:12" itemprop="dateCreated datePublished" datetime="2023-11-06T15:32:12+08:00">2023-11-06</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-07 11:17:07" itemprop="dateModified" datetime="2023-11-07T11:17:07+08:00">2023-11-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -222,7 +228,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/code-toturial/" itemprop="url" rel="index"><span itemprop="name">code-toturial</span></a>
+          <a href="/categories/code-tutorial/" itemprop="url" rel="index"><span itemprop="name">code-tutorial</span></a>
         </span>
     </span>
 
@@ -254,13 +260,35 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
 
 <p>查看文件夹下文件数量（包含子目录中文件）</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lR | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -lR | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看系统内核</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建软链接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ln -s [目标文件或目录] [软链接名称]</span><br><span class="line">// 示例</span><br><span class="line">ln -s /home/usr/test/testfile link</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>apt安装指定版本的软件包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 查看可用的软件包版本</span><br><span class="line">apt-cache showpkg [package_name]</span><br><span class="line">// 安装指定版本的软件包</span><br><span class="line">apt-get install [package_name]=[version]</span><br></pre></td></tr></table></figure>
+
+<p>apt卸载软件包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get --purge remove [package_name]</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="torrent下载"><a href="#torrent下载" class="headerlink" title="torrent下载"></a>torrent下载</h4><p>这里使用tget进行下载</p>
 <ol>
 <li><p>安装npm和tget</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install -y npm</span><br><span class="line">npm install -g t-get</span><br><span class="line">tget &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h4 id="设置和取消代理"><a href="#设置和取消代理" class="headerlink" title="设置和取消代理"></a>设置和取消代理</h4><p>设置代理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=...</span><br><span class="line">export https_proxy=...</span><br></pre></td></tr></table></figure>
+
+<p>取消代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">unset http_proxy</span><br><span class="line">unset https_proxy</span><br></pre></td></tr></table></figure>
+
+<p>查看代理：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">env | grep xxx</span><br></pre></td></tr></table></figure>
+
+<p>想要代理永久生效，可以修改&#x2F;etc&#x2F;profile文件，添加上述代理</p>
 
       
     </div>
@@ -315,9 +343,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-11-05 17:04:14 / 修改时间：20:12:45" itemprop="dateCreated datePublished" datetime="2023-11-05T17:04:14+08:00">2023-11-05</time>
+      <time title="创建时间：2023-11-05 17:04:14" itemprop="dateCreated datePublished" datetime="2023-11-05T17:04:14+08:00">2023-11-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-11-07 11:17:53" itemprop="dateModified" datetime="2023-11-07T11:17:53+08:00">2023-11-07</time>
     </span>
 
   
@@ -334,6 +368,12 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">path = &#x27;/home/jhxie/Workspace/namesort&#x27;</span><br><span class="line">for root,dirs,files in os.walk(path):</span><br><span class="line">        print(root)</span><br><span class="line">        print(dirs)</span><br><span class="line">        print(files)</span><br></pre></td></tr></table></figure>
 
 <p>获取文件夹下所有<strong>目录和文件</strong>，生成<strong>列表</strong>：<code>parentFilesAndRoots = os.listdir(parentDir)</code></p>
+<h4 id="1-2-tensorboard使用"><a href="#1-2-tensorboard使用" class="headerlink" title="1.2 tensorboard使用"></a>1.2 tensorboard使用</h4><p>远程使用时，首先将远程服务器的端口映射到本地的计算机</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -L 6006:127.0.0.1:6006 username@server_ip</span><br></pre></td></tr></table></figure>
+
+<p>然后再远程服务器上启动TensorBoard</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorboard --logdir &#x27;...&#x27; --port 6006</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
