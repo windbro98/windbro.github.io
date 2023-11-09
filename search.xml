@@ -1315,7 +1315,10 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 查看可用的软件包版本</span><br><span class="line">apt-cache showpkg [package_name]</span><br><span class="line">// 安装指定版本的软件包</span><br><span class="line">apt-get install [package_name]=[version]</span><br></pre></td></tr></table></figure>
 
 <p>apt卸载软件包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get --purge remove [package_name]</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt-get --purge remove [package_name]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为命令起别名</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 例</span><br><span class="line">alias rclone=&#x27;~/programs/rclone-v1.62.2-linux-amd64/rclone</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="torrent下载"><a href="#torrent下载" class="headerlink" title="torrent下载"></a>torrent下载</h4><p>这里使用tget进行下载</p>
 <ol>
@@ -1329,7 +1332,7 @@
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unset http_proxy</span><br><span class="line">unset https_proxy</span><br></pre></td></tr></table></figure>
 
 <p>查看代理：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">env | grep xxx</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 例：env | grep proxy</span><br><span class="line">env | grep xxx</span><br></pre></td></tr></table></figure>
 
 <p>想要代理永久生效，可以修改&#x2F;etc&#x2F;profile文件，添加上述代理</p>
 ]]></content>
@@ -1368,7 +1371,7 @@
 <p>获取文件夹下所有<strong>目录和文件</strong>，生成<strong>列表</strong>：<code>parentFilesAndRoots = os.listdir(parentDir)</code></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tensorboard --logdir &#x27;...&#x27; --port 6006</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-3-pandas读取csv文件"><a href="#1-3-pandas读取csv文件" class="headerlink" title="1.3 pandas读取csv文件"></a>1.3 pandas读取csv文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">data = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">data.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">darta.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-pandas读取csv文件"><a href="#1-3-pandas读取csv文件" class="headerlink" title="1.3 pandas读取csv文件"></a>1.3 pandas读取csv文件</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">data = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">data.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">data.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br><span class="line"># 查看数据的摘要</span><br><span class="line">data.info()</span><br><span class="line"># 描述性统计信息</span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-4-正则表达式-re"><a href="#1-4-正则表达式-re" class="headerlink" title="1.4 正则表达式 (re)"></a>1.4 正则表达式 (re)</h4><p>正则搜索：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># match - 从**头**开始匹配，匹配不到则返回none</span><br><span class="line"># search - 从**任意位置**开始匹配，匹配不到则返回none</span><br><span class="line">matchObj = re.match(pattern, string)</span><br><span class="line">matchObj = re.search(pattern, string).span()    </span><br></pre></td></tr></table></figure>
