@@ -20,23 +20,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="windbro的小黑屋">
-<meta property="og:url" content="http://example.com/categories/code-tutorial/index.html">
+    <meta name="description" content="git常用操作 git status: 查看当前仓库的状态  git checkout [branch_name]: 切换到对应的分支  git branch: 查看所有分支 git branch -d [branch_name]: 删除分支 git merge [branch_name]: 将当前分支与指定分支融合  git add [file_name]：添加文件，不过更常用的是下面的： gi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git-tutorial">
+<meta property="og:url" content="http://example.com/2023/11/10/git-tutorial/index.html">
 <meta property="og:site_name" content="windbro的小黑屋">
+<meta property="og:description" content="git常用操作 git status: 查看当前仓库的状态  git checkout [branch_name]: 切换到对应的分支  git branch: 查看所有分支 git branch -d [branch_name]: 删除分支 git merge [branch_name]: 将当前分支与指定分支融合  git add [file_name]：添加文件，不过更常用的是下面的： gi">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-10T08:07:38.000Z">
+<meta property="article:modified_time" content="2023-11-10T13:19:37.817Z">
 <meta property="article:author" content="windbro">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/categories/code-tutorial/">
+<link rel="canonical" href="http://example.com/2023/11/10/git-tutorial/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-CN","comments":"","permalink":"","path":"categories/code-tutorial/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/10/git-tutorial/","path":"2023/11/10/git-tutorial/","title":"git-tutorial"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>分类: code-tutorial | windbro的小黑屋</title>
+<title>git-tutorial | windbro的小黑屋</title>
   
 
 
@@ -123,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           文章目录
@@ -136,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">git常用操作</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -174,170 +180,121 @@
 
     </div>
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">code-tutorial
-          <small>分类</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/10/git-tutorial/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="git-tutorial | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git-tutorial
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="创建时间：2023-11-10 16:07:38 / 修改时间：21:19:37" itemprop="dateCreated datePublished" datetime="2023-11-10T16:07:38+08:00">2023-11-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/code-tutorial/" itemprop="url" rel="index"><span itemprop="name">code-tutorial</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="git常用操作"><a href="#git常用操作" class="headerlink" title="git常用操作"></a>git常用操作</h3><ol>
+<li><p><code>git status</code>: 查看当前仓库的状态</p>
+</li>
+<li><p><code>git checkout [branch_name]</code>: 切换到对应的分支</p>
+</li>
+<li><p><code>git branch</code>: 查看所有分支</p>
+<p><code>git branch -d [branch_name]</code>: 删除分支</p>
+<p><code>git merge [branch_name]</code>: 将当前分支与指定分支融合</p>
+</li>
+<li><p><code>git add [file_name]</code>：添加文件，不过更常用的是下面的：</p>
+<p><code>git add --all</code>: 添加所有文件</p>
+</li>
+<li><p><code>git commit -m &quot;[message]&quot;</code>: 提交文件，在这里表明了对分支内容的修改</p>
+</li>
+<li><p><code>git push origin</code>: 将该分支的<strong>内容</strong>上传到github的<strong>origin分支</strong></p>
+<p><code>git push origin [branch_name]</code>: 将<strong>该分支</strong>上传到github，成为一个<strong>新分支</strong></p>
+</li>
+<li><p><code>git pull origin</code>: 将github的origin分支下载到本地，与<strong>当前分支</strong>合并</p>
+<p><code>git pull origin next:master</code>: 将github的<strong>next</strong>分支下载到本地，与本地的<strong>master</strong>分支合并</p>
+</li>
+<li></li>
+</ol>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-10T16:07:38+08:00"
-              content="2023-11-10">
-          11-10
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/11/10/git-tutorial/" itemprop="url">
-          <span itemprop="name">git-tutorial</span>
-        </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/git/" rel="tag"># git</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/09/%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80/" rel="prev" title="光学基础">
+                  <i class="fa fa-angle-left"></i> 光学基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-07T20:23:05+08:00"
-              content="2023-11-07">
-          11-07
-        </time>
-      </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/11/07/data-process/" itemprop="url">
-          <span itemprop="name">data-process</span>
-        </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-11-06T15:32:12+08:00"
-              content="2023-11-06">
-          11-06
-        </time>
-      </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/11/06/linux-tutorial/" itemprop="url">
-          <span itemprop="name">linux-tutorial</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-28T20:25:31+08:00"
-              content="2023-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/28/markdown-tutorial/" itemprop="url">
-          <span itemprop="name">markdown tutorial</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-28T19:48:58+08:00"
-              content="2023-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/28/java-tutorial/" itemprop="url">
-          <span itemprop="name">java tutorial</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-28T19:48:47+08:00"
-              content="2023-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/28/c-tutorial/" itemprop="url">
-          <span itemprop="name">c++ tutorial</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-28T15:24:52+08:00"
-              content="2023-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/28/Hexo-tutorial/" itemprop="url">
-          <span itemprop="name">Hexo tutorial</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
-  </div>
-  
-  
-  
 
 </div>
   </main>

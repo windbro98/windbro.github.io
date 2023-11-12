@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha256-CTSx/A06dm1B063156EVh15m6Y67pAjZZaQc89LLSrU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="一. 光学绪论 光波作为信息载体的特点：波长很短，频率极高，光速极大，具有直接视觉效应  光是人类沟通宏观、微观和宇观三大世界的工具  光学的分支：      光与物质相互作用：分子光学；量子光学；光电子学    光的传播规律：几何光学；波动光学  波动光学：光的干涉，衍射和偏振；光学的时空相干性；波衍射理论；光学信息处理；全息术；光学传递函数  光的本性：物质结构及相互作用；现带标准模型；光子；">
+<meta property="og:type" content="article">
+<meta property="og:title" content="光学基础">
+<meta property="og:url" content="http://example.com/2023/11/09/%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="windbro的小黑屋">
+<meta property="og:description" content="一. 光学绪论 光波作为信息载体的特点：波长很短，频率极高，光速极大，具有直接视觉效应  光是人类沟通宏观、微观和宇观三大世界的工具  光学的分支：      光与物质相互作用：分子光学；量子光学；光电子学    光的传播规律：几何光学；波动光学  波动光学：光的干涉，衍射和偏振；光学的时空相干性；波衍射理论；光学信息处理；全息术；光学传递函数  光的本性：物质结构及相互作用；现带标准模型；光子；">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109202656600.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109203038029.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109203646885.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109203805406.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109204702415.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109204722680.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109205415403.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109205548244.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109205628437.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109210453005.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109210558874.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109211023832.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109211759957.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109211931652.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109213204730.png">
+<meta property="og:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109213136060.png">
+<meta property="article:published_time" content="2023-11-09T11:57:40.000Z">
+<meta property="article:modified_time" content="2023-11-09T13:41:12.783Z">
+<meta property="article:author" content="windbro">
+<meta property="article:tag" content="optic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="d:\learning_programs\hexo_programs\mywebsite\source_posts\images\%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80\image-20231109202656600.png">
+
+
+<link rel="canonical" href="http://example.com/2023/11/09/%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/11/09/%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80/","path":"2023/11/09/光学基础/","title":"光学基础"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>光学基础 | windbro的小黑屋</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">windbro的小黑屋</p>
+      <i class="logo-line"></i>
+    </a>
+      <img class="custom-logo-image" src="/images/logo.jpg" alt="windbro的小黑屋">
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E5%85%89%E5%AD%A6%E7%BB%AA%E8%AE%BA"><span class="nav-number">1.</span> <span class="nav-text">一. 光学绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E8%B4%B9%E9%A9%AC%E5%8E%9F%E7%90%86%E5%92%8C%E5%8F%98%E6%8A%98%E5%B0%84%E7%8E%87%E5%85%89%E5%AD%A6"><span class="nav-number">2.</span> <span class="nav-text">二. 费马原理和变折射率光学</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">windbro</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/09/%E5%85%89%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="windbro">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="光学基础 | windbro的小黑屋">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          光学基础
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-11-09 19:57:40 / 修改时间：21:41:12" itemprop="dateCreated datePublished" datetime="2023-11-09T19:57:40+08:00">2023-11-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/optics/" itemprop="url" rel="index"><span itemprop="name">optics</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h3 id="一-光学绪论"><a href="#一-光学绪论" class="headerlink" title="一. 光学绪论"></a>一. 光学绪论</h3><ol>
+<li><p>光波作为信息载体的特点：<strong>波长很短，频率极高，光速极大，具有直接视觉效应</strong></p>
+</li>
+<li><p>光是人类沟通<strong>宏观、微观和宇观</strong>三大世界的工具</p>
+</li>
+<li><p>光学的分支：</p>
+</li>
+</ol>
+<p>   光与物质相互作用：分子光学；量子光学；光电子学</p>
+<p>   光的传播规律：几何光学；波动光学</p>
+<ol start="4">
+<li><p>波动光学：光的干涉，衍射和偏振；光学的时空相干性；波衍射理论；光学信息处理；全息术；光学传递函数</p>
+</li>
+<li><p>光的本性：物质结构及相互作用；现带标准模型；光子；传递电磁相互作用；光子静止质量（静止质量不为0 -&gt; 真空色散，理论预测光子质量小于$10^{-46}$）</p>
+</li>
+<li><p>现代光学(modern optics)的提出：全息术原理的提出；光学传递函数作为象质评价标准的确立；激光器的诞生；相衬显微镜的发生。</p>
+</li>
+</ol>
+<h3 id="二-费马原理和变折射率光学"><a href="#二-费马原理和变折射率光学" class="headerlink" title="二. 费马原理和变折射率光学"></a>二. 费马原理和变折射率光学</h3><ol>
+<li>折射率：透明介质、光学物性参数。最初源于折射定律</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109202656600.png" alt="image-20231109202656600"></p>
+<p>​		$\frac{sini_2}{sini_1} &#x3D; \frac{n_1}{n_2}$，n代表折射率，通常写作$n_1*sin i_1 &#x3D; n_2 * sin i_2$</p>
+<ol start="2">
+<li>折射率与<strong>波长</strong>有关，同一种介质的折射率因光的波长而因，常常由Fraunhofer line来衡量一种介质的该性质。</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109203038029.png" alt="image-20231109203038029"></p>
+<p>​		反映材料该性质的物理量为<strong>色散率</strong> $\Delta &#x3D; \frac{n_F - n_C}{n_D - 1}$</p>
+<ol start="3">
+<li><p>惠更斯原理：平行光进入介质后，其在第二种介质中的状况由惠更斯原理得到。</p>
+<p>$\frac{sin i_2}{sin i_1} &#x3D; \frac{v_2}{v_1} &#x3D; const$</p>
+</li>
+</ol>
+<p>​		$v$代表光在介质中的传播速度，故$\frac{n_1}{n_2} &#x3D; \frac{v_2}{v_1}$</p>
+<p>​		介质的相对折射率：$n &#x3D; \frac{c}{v}$，即相对于真空的折射率</p>
+<ol start="4">
+<li><p>$n &#x3D; \frac{\lambda_0}{\lambda}$，即同一条谱线的光在此介质中的波长，导出过程：</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109203646885.png" alt="image-20231109203646885"></p>
+</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109203805406.png" alt="image-20231109203805406"></p>
+<p>​		因此，<strong>时间频率</strong>是光的本质频率，<strong>是眼睛实际接收到的频率</strong></p>
+<p>​		以橙光为例，其在折射率较大的介质中，波长改变，但是人类看到的依然是橙光。</p>
+<ol start="5">
+<li><p>光程：相对于真空，光走过的路程</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109204702415.png" alt="image-20231109204702415"></p>
+</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109204722680.png" alt="image-20231109204722680"></p>
+<p>光程的初步意义：</p>
+<ul>
+<li><p>相位差与光程的关系：沿着波的传播方向，相位逐渐落后。$\phi(P) - \phi(Q) &#x3D; -\frac{2\pi}{\lambda_0}L(QP)$</p>
+</li>
+<li><p>时间差与光程的关系：$t_P - t_Q &#x3D; \frac{L(QP)}{c}$</p>
+</li>
+</ul>
+<ol start="5">
+<li>费马原理：光线沿光程为<strong>平稳值</strong>的路径传播</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109205415403.png" alt="image-20231109205415403"></p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109205548244.png" alt="image-20231109205548244"></p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109205628437.png" alt="image-20231109205628437"></p>
+<ol start="5">
+<li>费马原理可以导出 -&gt; 直线传播定理，反射定理，折射定理，其是几何光学三定律的理论概括</li>
+</ol>
+<p>​		费马原理的推论 -&gt; 物象之间各条光线的光程是相等的 - <strong>物象等光程性</strong></p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109210453005.png" alt="image-20231109210453005"></p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109210558874.png" alt="image-20231109210558874"> </p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109211023832.png" alt="image-20231109211023832"></p>
+<ol start="6">
+<li>理想光学系统：物空间的每一个物点对应像空间的一个像点</li>
+</ol>
+<p>​		现实中几乎没有理想光学系统（除了平面镜），但是存在对应的共轭点。下面的Q与Q’都是共轭点，也叫做齐明点（即放置光源的效果相同）</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109211759957.png" alt="image-20231109211759957"></p>
+<p>​		反射</p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109211931652.png" alt="image-20231109211931652"></p>
+<p>​		透射</p>
+<ol start="7">
+<li><p>阿贝正弦定理： </p>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109213204730.png" alt="image-20231109213204730"></p>
+</li>
+</ol>
+<p><img src="D:\learning_programs\hexo_programs\mywebsite\source_posts\images\光学基础\image-20231109213136060.png" alt="image-20231109213136060"></p>
+<p>只有满足阿贝成像原理，才能使小物很好地成像</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/optic/" rel="tag"># optic</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/11/07/data-process/" rel="prev" title="data-process">
+                  <i class="fa fa-angle-left"></i> data-process
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/11/10/git-tutorial/" rel="next" title="git-tutorial">
+                  git-tutorial <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">windbro</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
