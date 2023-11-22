@@ -154,7 +154,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -482,7 +482,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-12 14:53:59" itemprop="dateModified" datetime="2023-11-12T14:53:59+08:00">2023-11-12</time>
+      <time title="修改时间：2023-11-20 21:18:15" itemprop="dateModified" datetime="2023-11-20T21:18:15+08:00">2023-11-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -504,18 +504,28 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="1-图片处理"><a href="#1-图片处理" class="headerlink" title="1. 图片处理"></a>1. 图片处理</h3><h4 id="1-1-OpenCV"><a href="#1-1-OpenCV" class="headerlink" title="1.1 OpenCV"></a>1.1 OpenCV</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 下载时，使用opencv-python</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"># 图片读取</span><br><span class="line">image = cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵</span><br></pre></td></tr></table></figure>
+          <h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="1-图片处理"><a href="#1-图片处理" class="headerlink" title="1. 图片处理"></a>1. 图片处理</h3><h4 id="1-0-Notes"><a href="#1-0-Notes" class="headerlink" title="1.0 Notes"></a>1.0 Notes</h4><ol>
+<li>使用PIL得到的灰度图，和使用cv2.imread直接得到的灰度图并不相同，即使是前者被tensor化</li>
+</ol>
+<h4 id="1-1-OpenCV"><a href="#1-1-OpenCV" class="headerlink" title="1.1 OpenCV"></a>1.1 OpenCV</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 下载时，使用opencv-python</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"># 图片读取</span><br><span class="line">image = cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-2-PIL"><a href="#1-2-PIL" class="headerlink" title="1.2 PIL"></a>1.2 PIL</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line"># 读取图片</span><br><span class="line">image = Image.open(image_path).convert(&#x27;RGB&#x27;) # RGB-彩色, L-灰色</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-PIL"><a href="#1-2-PIL" class="headerlink" title="1.2 PIL"></a>1.2 PIL</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line"># 读取图片</span><br><span class="line">image = Image.open(image_path).convert(&#x27;RGB&#x27;) # RGB-彩色, L-灰色（得到的数值范围：0-255）</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-3-plt"><a href="#1-3-plt" class="headerlink" title="1.3 plt"></a>1.3 plt</h4><ul>
-<li>确定图片：<code>fig = plt.figure()</code></li>
-<li>绘图：<code>line = plt.plot(x, y)</code>。当使用fig确定图片后，可以多次使用plt.plot，在一张图上多次绘制曲线。通常情况下，可以不赋值line.</li>
-<li>标注：<code>plt.legend(loc=&#39;upper right&#39;)</code>，需要配合<code>plt.plot()</code>中的label参数使用</li>
-<li>保存图片：<code>fig.savefig(&#39;img_name.png&#39;)</code></li>
-<li>现场展示图片：<code>plt.show()</code></li>
-<li>读取图片：<code>img = plt.imread(&#39;img_name&#39;)</code>.</li>
-<li>分图片：<code>plt.subplot(221)</code>. 代表2行2列，当前是第一张图片</li>
+<li><p>确定图片：<code>fig = plt.figure()</code></p>
+</li>
+<li><p>绘图：<code>line = plt.plot(x, y)</code>。当使用fig确定图片后，可以多次使用plt.plot，在一张图上多次绘制曲线。通常情况下，可以不赋值line.</p>
+</li>
+<li><p>标注：<code>plt.legend(loc=&#39;upper right&#39;)</code>，需要配合<code>plt.plot()</code>中的label参数使用</p>
+</li>
+<li><p>保存图片：<code>fig.savefig(&#39;img_name.png&#39;)</code></p>
+</li>
+<li><p>现场展示图片：<code>plt.show()</code></p>
+</li>
+<li><p>读取图片：<code>img = plt.imread(&#39;img_name&#39;)</code>. （这里得到的是矩阵，想要显示需要 <code>imshow(img)</code>）</p>
+</li>
+<li><p>分图片：<code>plt.subplot(221)</code>. 代表2行2列，当前是第一张图片</p>
+</li>
 </ul>
 <h3 id="2-字符串处理"><a href="#2-字符串处理" class="headerlink" title="2. 字符串处理"></a>2. 字符串处理</h3><h4 id="2-1-正则表达式-re"><a href="#2-1-正则表达式-re" class="headerlink" title="2.1 正则表达式 (re)"></a>2.1 正则表达式 (re)</h4><p>正则搜索：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># match - 从**头**开始匹配，匹配不到则返回none</span><br><span class="line"># search - 从**任意位置**开始匹配，匹配不到则返回none</span><br><span class="line">matchObj = re.match(pattern, string)</span><br><span class="line">matchObj = re.search(pattern, string).span()    </span><br></pre></td></tr></table></figure>
@@ -527,9 +537,19 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 返回匹配到的字符在原字符中的位置范围，如(0, 3)</span><br><span class="line">matchObj.span() </span><br><span class="line"></span><br><span class="line"># 返回匹配到的完整字符, 这里以re.match(&#x27;_(.*)_(.*)&#x27;, &#x27;234_123_4312&#x27;)为例</span><br><span class="line">matchObj.group() / matchObj.group(0) # &#x27;_123_4312&#x27;</span><br><span class="line">matchObj.group(1) # &#x27;123&#x27;</span><br><span class="line">matchObj.group(2) # &#x27;4312&#x27;</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-文件处理"><a href="#3-文件处理" class="headerlink" title="3. 文件处理"></a>3. 文件处理</h3><h4 id="3-1-pandas文件处理"><a href="#3-1-pandas文件处理" class="headerlink" title="3.1 pandas文件处理"></a>3.1 <strong>pandas文件处理</strong></h4><ul>
+<li>DataFrame基本信息读取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">df = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">df.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">df.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br><span class="line"># 查看数据的摘要</span><br><span class="line">df.info()</span><br><span class="line"># 描述性统计信息，比如平均值，标准差等</span><br><span class="line">df.describe()</span><br><span class="line"># 读取头部n行</span><br><span class="line">df.head(n)</span><br><span class="line"># 读取尾部n行</span><br><span class="line">df.tail(n)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DataFrame基本数据操作</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">data = []</span><br><span class="line">df = pd.DataFrame(data, columns=[<span class="string">&#x27;bla&#x27;</span>, <span class="string">&#x27;blabla&#x27;</span>])</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">另一种写法，此时字典的键会成为列名：</span></span><br><span class="line"><span class="string">data = &#123;&#x27;bla&#x27;: [...], &#x27;blabla&#x27;:[...]&#125;</span></span><br><span class="line"><span class="string">df = pd.DataFrame(data)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 添加行</span></span><br><span class="line">new_row = [...]</span><br><span class="line">df.loc[<span class="built_in">len</span>(df.index)] = new_row <span class="comment"># 添加一行</span></span><br><span class="line">df.append(df2, ignore_index=<span class="literal">True</span>) <span class="comment"># 添加多行，需要将后者先转化为dataFrame</span></span><br><span class="line"><span class="comment"># 添加列</span></span><br><span class="line">new_col = [...]</span><br><span class="line">df[<span class="string">&#x27;col_name&#x27;</span>] = new_col</span><br><span class="line"><span class="comment"># 删除行或列，删除后为新值</span></span><br><span class="line">df = df.drop(df.index[[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]]) <span class="comment"># 按行号删除行</span></span><br><span class="line">df = df.drop([<span class="string">&#x27;aaa&#x27;</span>, <span class="string">&#x27;bbb&#x27;</span>]) <span class="comment"># 按行名删除行</span></span><br><span class="line">df = df.drop([<span class="string">&#x27;col1&#x27;</span>, <span class="string">&#x27;col2&#x27;</span>], axis=<span class="number">1</span>) <span class="comment"># 按列名删除列</span></span><br><span class="line">df = df.drop(df.columns[[<span class="number">1</span>,<span class="number">2</span>]], axis=<span class="number">1</span>) <span class="comment"># 按列号删除列</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>csv文件读取</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">data = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">data.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">data.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br><span class="line"># 查看数据的摘要</span><br><span class="line">data.info()</span><br><span class="line"># 描述性统计信息</span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取csv文件</span></span><br><span class="line">df = pd.read_csv(csv_file)</span><br><span class="line"><span class="comment"># 保存为csv文件</span></span><br><span class="line">df.to_csv(<span class="string">&#x27;csv_name&#x27;</span>) <span class="comment"># 相当于w模式</span></span><br><span class="line">df.to_csv(<span class="string">&#x27;csv_name&#x27;</span>, mode=<span class="string">&#x27;a&#x27;</span>, header=<span class="literal">False</span>) <span class="comment"># 向相同结构的csv追加数据</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -593,7 +613,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-10 16:36:46" itemprop="dateModified" datetime="2023-11-10T16:36:46+08:00">2023-11-10</time>
+      <time title="修改时间：2023-11-21 20:55:55" itemprop="dateModified" datetime="2023-11-21T20:55:55+08:00">2023-11-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -629,6 +649,9 @@
 <li><p>查看文件夹下文件数量（不包含目录）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^-&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
 
+<p>命令解释：</p>
+<p>grep - 使用正则表达式，匹配字符</p>
+<p>wc - 计算文本的行数</p>
 <p>查看文件夹下目录数量（不包含文件）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -l | grep <span class="string">&quot;^d&quot;</span> | <span class="built_in">wc</span> -l</span><br></pre></td></tr></table></figure>
 
@@ -650,12 +673,32 @@
 <li><p>为命令起别名</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 例：可以用rclone直接代表后续的命令</span><br><span class="line">alias rclone=&#x27;~/programs/rclone-v1.62.2-linux-amd64/rclone</span><br></pre></td></tr></table></figure></li>
 </ul>
-<h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="torrent下载"><a href="#torrent下载" class="headerlink" title="torrent下载"></a>torrent下载</h4><p>这里使用tget进行下载</p>
+<h4 id="3-进程相关"><a href="#3-进程相关" class="headerlink" title="3. 进程相关"></a>3. 进程相关</h4><ul>
+<li><p>删除进程</p>
+<p><code>pkill -9 python</code>: 根据进程名称中的<strong>关键字</strong>，删除进程</p>
+<p><code>kill -9 PID</code>: 根据进程的<strong>进程号</strong>，删除进程</p>
+</li>
+<li><p>查看进程状态</p>
+<p><code>ps -ef</code>: 查看当前进程的状态</p>
+</li>
+</ul>
+<h4 id="4-tar压缩文件"><a href="#4-tar压缩文件" class="headerlink" title="4. tar压缩文件"></a>4. tar压缩文件</h4><ul>
+<li>压缩为.tar.gz文件：<code>tar -czvf test.tar.gz test/</code></li>
+<li>打包为.tar文件：<code>tar -cvf test.tar test/</code></li>
+<li>排除压缩中的部分文件：<code>tar -cvf test.tar --exclude test/dir1 --exclude test/file1 test/</code></li>
+<li>解压.tar.gz文件：<code>tar -xzvf test.tar.gz</code></li>
+<li>解压.tar文件：<code>tar -xvf test.tar</code></li>
+</ul>
+<h4 id="5-链接"><a href="#5-链接" class="headerlink" title="5. 链接"></a>5. 链接</h4><ul>
+<li>软链接的建立：<code>ln -s  [srcPath] [linkPath]</code></li>
+<li>查看软链接指向的地址：<code>ls -al</code></li>
+</ul>
+<h3 id="偶尔用到的命令"><a href="#偶尔用到的命令" class="headerlink" title="偶尔用到的命令"></a>偶尔用到的命令</h3><h4 id="1-torrent下载"><a href="#1-torrent下载" class="headerlink" title="1. torrent下载"></a>1. torrent下载</h4><p>这里使用tget进行下载</p>
 <ol>
 <li><p>安装npm和tget</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install -y npm</span><br><span class="line">npm install -g t-get</span><br><span class="line">tget &#x27;...&#x27;</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h4 id="设置和取消代理"><a href="#设置和取消代理" class="headerlink" title="设置和取消代理"></a>设置和取消代理</h4><p>设置代理</p>
+<h4 id="2-设置和取消代理"><a href="#2-设置和取消代理" class="headerlink" title="2. 设置和取消代理"></a>2. 设置和取消代理</h4><p>设置代理</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export http_proxy=...</span><br><span class="line">export https_proxy=...</span><br></pre></td></tr></table></figure>
 
 <p>取消代理：</p>
@@ -801,7 +844,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2023/11/05/torch-tutorial/" class="post-title-link" itemprop="url">torch tutorial</a>
+          <a href="/2023/11/05/torch-tutorial/" class="post-title-link" itemprop="url">torch-tutorial</a>
         </h2>
 
         <div class="post-meta-container">
@@ -819,7 +862,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-12 14:27:06" itemprop="dateModified" datetime="2023-11-12T14:27:06+08:00">2023-11-12</time>
+      <time title="修改时间：2023-11-21 10:07:38" itemprop="dateModified" datetime="2023-11-21T10:07:38+08:00">2023-11-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -827,7 +870,7 @@
       </span>
       <span class="post-meta-item-text">分类于</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/code-toturial/" itemprop="url" rel="index"><span itemprop="name">code-toturial</span></a>
+          <a href="/categories/code-tutorial/" itemprop="url" rel="index"><span itemprop="name">code-tutorial</span></a>
         </span>
     </span>
 
@@ -843,7 +886,8 @@
     <div class="post-body" itemprop="articleBody">
           <h3 id="常用torch语句"><a href="#常用torch语句" class="headerlink" title="常用torch语句"></a>常用torch语句</h3><h4 id="1-tensor数据处理"><a href="#1-tensor数据处理" class="headerlink" title="1. tensor数据处理"></a>1. tensor数据处理</h4><p>保存tensor数据：<code>torch.save(my_tensor, &#39;xxx.pt&#39;)</code></p>
 <p>读取tensor数据：<code>my_tensor = torch.load(&#39;xxx.pt&#39;)</code></p>
-<h3 id="2-分布生成"><a href="#2-分布生成" class="headerlink" title="2. 分布生成"></a>2. 分布生成</h3><p>产生均值为0，方差为1的高斯分布：<code>num_randn = torch.randn(2, 3)</code></p>
+<p>拼接tensor数据：<code>my_tensor = torch.cat([x1, x2], 0)</code></p>
+<h4 id="2-分布生成"><a href="#2-分布生成" class="headerlink" title="2. 分布生成"></a>2. 分布生成</h4><p>产生均值为0，方差为1的高斯分布：<code>num_randn = torch.randn(2, 3)</code></p>
 <p>产生[0, 1)之间的均匀分布： <code>num_rand = torch.rand(2,3)</code> </p>
 <h4 id="3-图片保存"><a href="#3-图片保存" class="headerlink" title="3. 图片保存"></a>3. 图片保存</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from torchvision.utils import save_image</span><br><span class="line">save_image(tensor, filename)</span><br></pre></td></tr></table></figure>
 
@@ -865,8 +909,15 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># add_scalar</span><br><span class="line"># 每次仅能添加一个数据，形成曲线必须借助于for循环</span><br><span class="line">writer.add_scalar(&#x27;data_name&#x27;, value, step)</span><br><span class="line"></span><br><span class="line"># add_scalars</span><br><span class="line"># 每次添加的是一个字典，因此形成的图像中有多条曲线</span><br><span class="line">writer.add_scalars(&#x27;data_name&#x27;, &#123;&#x27;value1_name&#x27;: value1, &#x27;value2_name&#x27;: value2&#125;, step)</span><br><span class="line"></span><br><span class="line"># add_image</span><br><span class="line"># 可以直接使用tensor</span><br><span class="line">writer.add_image(&#x27;img_name&#x27;, img, step)</span><br><span class="line"># 一次添加多张图片，形成网格</span><br><span class="line"># nrow代表每行的图片个数，normalize代表是否将图片缩放到[0, 1]之间</span><br><span class="line">img_grid = torchvision.utils.make_grid(imgs, nrow=n_row, normalize=True) </span><br><span class="line">writer.add_image(&#x27;img_name&#x27;, img_grid, step)</span><br></pre></td></tr></table></figure>
 
-
-
+<h4 id="5-torchmetrics使用"><a href="#5-torchmetrics使用" class="headerlink" title="5. torchmetrics使用"></a>5. torchmetrics使用</h4><ul>
+<li><p>报错提示</p>
+<p>libcudart.so.10.2: cannot open shared object file: No such file or directory</p>
+<p>原因是cuda版本高于10.2，因此目录下缺乏文件libcudaaert.so.10.2 </p>
+<p>解决方法：</p>
+<p>链接: <a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1JctSCWNLkuO44LkmH3hqeA?pwd=cbh8">https://pan.baidu.com/s/1JctSCWNLkuO44LkmH3hqeA?pwd=cbh8</a> 提取码: cbh8</p>
+<p>下载该文件，复制到 &#x2F;usr&#x2F;local&#x2F;cuda-11.5&#x2F;lib64下即可</p>
+</li>
+</ul>
 <h3 id="偶尔会用到的torch语句"><a href="#偶尔会用到的torch语句" class="headerlink" title="偶尔会用到的torch语句"></a>偶尔会用到的torch语句</h3><ol>
 <li><p>完整输出tensor的数据，而不是折叠过的：<code>torch.set_printoptions(profile=&#39;full&#39;)</code></p>
 <p>恢复：<code>torch.set_printoptions(profile=&#39;default&#39;)</code></p>

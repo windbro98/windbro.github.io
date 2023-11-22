@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="常用1. 图片处理1.1 OpenCV12345# 下载时，使用opencv-pythonimport cv2# 图片读取image &#x3D; cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵  1.2 PIL1234from PIL import Image# 读取图片image &#x3D; Image.open(image_path).convert(&amp;#x27">
+    <meta name="description" content="常用1. 图片处理1.0 Notes 使用PIL得到的灰度图，和使用cv2.imread直接得到的灰度图并不相同，即使是前者被tensor化  1.1 OpenCV12345# 下载时，使用opencv-pythonimport cv2# 图片读取image &#x3D; cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵  1.2 PIL1234from PIL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="data-process">
 <meta property="og:url" content="http://example.com/2023/11/07/data-process/index.html">
 <meta property="og:site_name" content="windbro的小黑屋">
-<meta property="og:description" content="常用1. 图片处理1.1 OpenCV12345# 下载时，使用opencv-pythonimport cv2# 图片读取image &#x3D; cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵  1.2 PIL1234from PIL import Image# 读取图片image &#x3D; Image.open(image_path).convert(&amp;#x27">
+<meta property="og:description" content="常用1. 图片处理1.0 Notes 使用PIL得到的灰度图，和使用cv2.imread直接得到的灰度图并不相同，即使是前者被tensor化  1.1 OpenCV12345# 下载时，使用opencv-pythonimport cv2# 图片读取image &#x3D; cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵  1.2 PIL1234from PIL">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-07T12:23:05.000Z">
-<meta property="article:modified_time" content="2023-11-12T06:53:59.483Z">
+<meta property="article:modified_time" content="2023-11-20T13:18:15.749Z">
 <meta property="article:author" content="windbro">
 <meta property="article:tag" content="python data-process">
 <meta name="twitter:card" content="summary">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">常用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">1. 图片处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-OpenCV"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.1 OpenCV</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-PIL"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.2 PIL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-plt"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.3 plt</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">2. 字符串处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-re"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 正则表达式 (re)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">3. 文件处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-pandas%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 pandas文件处理</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">常用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E5%9B%BE%E7%89%87%E5%A4%84%E7%90%86"><span class="nav-number">1.1.</span> <span class="nav-text">1. 图片处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-0-Notes"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.0 Notes</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-OpenCV"><span class="nav-number">1.1.2.</span> <span class="nav-text">1.1 OpenCV</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-PIL"><span class="nav-number">1.1.3.</span> <span class="nav-text">1.2 PIL</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-plt"><span class="nav-number">1.1.4.</span> <span class="nav-text">1.3 plt</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%A4%84%E7%90%86"><span class="nav-number">1.2.</span> <span class="nav-text">2. 字符串处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-re"><span class="nav-number">1.2.1.</span> <span class="nav-text">2.1 正则表达式 (re)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.3.</span> <span class="nav-text">3. 文件处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-pandas%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86"><span class="nav-number">1.3.1.</span> <span class="nav-text">3.1 pandas文件处理</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,7 +160,7 @@
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -227,7 +227,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-12 14:53:59" itemprop="dateModified" datetime="2023-11-12T14:53:59+08:00">2023-11-12</time>
+      <time title="修改时间：2023-11-20 21:18:15" itemprop="dateModified" datetime="2023-11-20T21:18:15+08:00">2023-11-20</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -248,18 +248,28 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="1-图片处理"><a href="#1-图片处理" class="headerlink" title="1. 图片处理"></a>1. 图片处理</h3><h4 id="1-1-OpenCV"><a href="#1-1-OpenCV" class="headerlink" title="1.1 OpenCV"></a>1.1 OpenCV</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 下载时，使用opencv-python</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"># 图片读取</span><br><span class="line">image = cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵</span><br></pre></td></tr></table></figure>
+    <div class="post-body" itemprop="articleBody"><h2 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h2><h3 id="1-图片处理"><a href="#1-图片处理" class="headerlink" title="1. 图片处理"></a>1. 图片处理</h3><h4 id="1-0-Notes"><a href="#1-0-Notes" class="headerlink" title="1.0 Notes"></a>1.0 Notes</h4><ol>
+<li>使用PIL得到的灰度图，和使用cv2.imread直接得到的灰度图并不相同，即使是前者被tensor化</li>
+</ol>
+<h4 id="1-1-OpenCV"><a href="#1-1-OpenCV" class="headerlink" title="1.1 OpenCV"></a>1.1 OpenCV</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 下载时，使用opencv-python</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line"># 图片读取</span><br><span class="line">image = cv2.imread(image_path) # 不能访问带中文路径的图像，生成numpy矩阵</span><br></pre></td></tr></table></figure>
 
-<h4 id="1-2-PIL"><a href="#1-2-PIL" class="headerlink" title="1.2 PIL"></a>1.2 PIL</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line"># 读取图片</span><br><span class="line">image = Image.open(image_path).convert(&#x27;RGB&#x27;) # RGB-彩色, L-灰色</span><br></pre></td></tr></table></figure>
+<h4 id="1-2-PIL"><a href="#1-2-PIL" class="headerlink" title="1.2 PIL"></a>1.2 PIL</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">from PIL import Image</span><br><span class="line"></span><br><span class="line"># 读取图片</span><br><span class="line">image = Image.open(image_path).convert(&#x27;RGB&#x27;) # RGB-彩色, L-灰色（得到的数值范围：0-255）</span><br></pre></td></tr></table></figure>
 
 <h4 id="1-3-plt"><a href="#1-3-plt" class="headerlink" title="1.3 plt"></a>1.3 plt</h4><ul>
-<li>确定图片：<code>fig = plt.figure()</code></li>
-<li>绘图：<code>line = plt.plot(x, y)</code>。当使用fig确定图片后，可以多次使用plt.plot，在一张图上多次绘制曲线。通常情况下，可以不赋值line.</li>
-<li>标注：<code>plt.legend(loc=&#39;upper right&#39;)</code>，需要配合<code>plt.plot()</code>中的label参数使用</li>
-<li>保存图片：<code>fig.savefig(&#39;img_name.png&#39;)</code></li>
-<li>现场展示图片：<code>plt.show()</code></li>
-<li>读取图片：<code>img = plt.imread(&#39;img_name&#39;)</code>.</li>
-<li>分图片：<code>plt.subplot(221)</code>. 代表2行2列，当前是第一张图片</li>
+<li><p>确定图片：<code>fig = plt.figure()</code></p>
+</li>
+<li><p>绘图：<code>line = plt.plot(x, y)</code>。当使用fig确定图片后，可以多次使用plt.plot，在一张图上多次绘制曲线。通常情况下，可以不赋值line.</p>
+</li>
+<li><p>标注：<code>plt.legend(loc=&#39;upper right&#39;)</code>，需要配合<code>plt.plot()</code>中的label参数使用</p>
+</li>
+<li><p>保存图片：<code>fig.savefig(&#39;img_name.png&#39;)</code></p>
+</li>
+<li><p>现场展示图片：<code>plt.show()</code></p>
+</li>
+<li><p>读取图片：<code>img = plt.imread(&#39;img_name&#39;)</code>. （这里得到的是矩阵，想要显示需要 <code>imshow(img)</code>）</p>
+</li>
+<li><p>分图片：<code>plt.subplot(221)</code>. 代表2行2列，当前是第一张图片</p>
+</li>
 </ul>
 <h3 id="2-字符串处理"><a href="#2-字符串处理" class="headerlink" title="2. 字符串处理"></a>2. 字符串处理</h3><h4 id="2-1-正则表达式-re"><a href="#2-1-正则表达式-re" class="headerlink" title="2.1 正则表达式 (re)"></a>2.1 正则表达式 (re)</h4><p>正则搜索：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># match - 从**头**开始匹配，匹配不到则返回none</span><br><span class="line"># search - 从**任意位置**开始匹配，匹配不到则返回none</span><br><span class="line">matchObj = re.match(pattern, string)</span><br><span class="line">matchObj = re.search(pattern, string).span()    </span><br></pre></td></tr></table></figure>
@@ -271,9 +281,19 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 返回匹配到的字符在原字符中的位置范围，如(0, 3)</span><br><span class="line">matchObj.span() </span><br><span class="line"></span><br><span class="line"># 返回匹配到的完整字符, 这里以re.match(&#x27;_(.*)_(.*)&#x27;, &#x27;234_123_4312&#x27;)为例</span><br><span class="line">matchObj.group() / matchObj.group(0) # &#x27;_123_4312&#x27;</span><br><span class="line">matchObj.group(1) # &#x27;123&#x27;</span><br><span class="line">matchObj.group(2) # &#x27;4312&#x27;</span><br></pre></td></tr></table></figure>
 
 <h3 id="3-文件处理"><a href="#3-文件处理" class="headerlink" title="3. 文件处理"></a>3. 文件处理</h3><h4 id="3-1-pandas文件处理"><a href="#3-1-pandas文件处理" class="headerlink" title="3.1 pandas文件处理"></a>3.1 <strong>pandas文件处理</strong></h4><ul>
+<li>DataFrame基本信息读取</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">df = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">df.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">df.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br><span class="line"># 查看数据的摘要</span><br><span class="line">df.info()</span><br><span class="line"># 描述性统计信息，比如平均值，标准差等</span><br><span class="line">df.describe()</span><br><span class="line"># 读取头部n行</span><br><span class="line">df.head(n)</span><br><span class="line"># 读取尾部n行</span><br><span class="line">df.tail(n)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DataFrame基本数据操作</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建dataframe</span></span><br><span class="line">data = []</span><br><span class="line">df = pd.DataFrame(data, columns=[<span class="string">&#x27;bla&#x27;</span>, <span class="string">&#x27;blabla&#x27;</span>])</span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">另一种写法，此时字典的键会成为列名：</span></span><br><span class="line"><span class="string">data = &#123;&#x27;bla&#x27;: [...], &#x27;blabla&#x27;:[...]&#125;</span></span><br><span class="line"><span class="string">df = pd.DataFrame(data)</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="comment"># 添加行</span></span><br><span class="line">new_row = [...]</span><br><span class="line">df.loc[<span class="built_in">len</span>(df.index)] = new_row <span class="comment"># 添加一行</span></span><br><span class="line">df.append(df2, ignore_index=<span class="literal">True</span>) <span class="comment"># 添加多行，需要将后者先转化为dataFrame</span></span><br><span class="line"><span class="comment"># 添加列</span></span><br><span class="line">new_col = [...]</span><br><span class="line">df[<span class="string">&#x27;col_name&#x27;</span>] = new_col</span><br><span class="line"><span class="comment"># 删除行或列，删除后为新值</span></span><br><span class="line">df = df.drop(df.index[[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>]]) <span class="comment"># 按行号删除行</span></span><br><span class="line">df = df.drop([<span class="string">&#x27;aaa&#x27;</span>, <span class="string">&#x27;bbb&#x27;</span>]) <span class="comment"># 按行名删除行</span></span><br><span class="line">df = df.drop([<span class="string">&#x27;col1&#x27;</span>, <span class="string">&#x27;col2&#x27;</span>], axis=<span class="number">1</span>) <span class="comment"># 按列名删除列</span></span><br><span class="line">df = df.drop(df.columns[[<span class="number">1</span>,<span class="number">2</span>]], axis=<span class="number">1</span>) <span class="comment"># 按列号删除列</span></span><br></pre></td></tr></table></figure>
+
+<ul>
 <li>csv文件读取</li>
 </ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">data = pd.read_csv(csv_file)</span><br><span class="line"># 按行+列坐标读取</span><br><span class="line">data.loc[0][0]</span><br><span class="line"># 读取数据区域</span><br><span class="line">data.loc[0:3][&quot;B&quot;:&quot;D&quot;]</span><br><span class="line"># 查看数据的摘要</span><br><span class="line">data.info()</span><br><span class="line"># 描述性统计信息</span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取csv文件</span></span><br><span class="line">df = pd.read_csv(csv_file)</span><br><span class="line"><span class="comment"># 保存为csv文件</span></span><br><span class="line">df.to_csv(<span class="string">&#x27;csv_name&#x27;</span>) <span class="comment"># 相当于w模式</span></span><br><span class="line">df.to_csv(<span class="string">&#x27;csv_name&#x27;</span>, mode=<span class="string">&#x27;a&#x27;</span>, header=<span class="literal">False</span>) <span class="comment"># 向相同结构的csv追加数据</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
