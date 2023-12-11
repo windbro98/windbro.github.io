@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-12 15:57:11" itemprop="dateModified" datetime="2023-11-12T15:57:11+08:00">2023-11-12</time>
+      <time title="修改时间：2023-12-07 11:57:19" itemprop="dateModified" datetime="2023-12-07T11:57:19+08:00">2023-12-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -826,6 +826,20 @@
 <li><p>alt+enter: 对红色波浪线部分进行修正</p>
 </li>
 <li></li>
+</ol>
+<h3 id="实践知识积累"><a href="#实践知识积累" class="headerlink" title="实践知识积累"></a>实践知识积累</h3><ol>
+<li><p>使用serialization可以轻易实现java中任何数据类型与byte[]之间的互换，例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="comment">// Create raw data.</span></span><br><span class="line">    Map&lt;Integer, String&gt; data = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, String&gt;();</span><br><span class="line">    data.put(<span class="number">1</span>, <span class="string">&quot;hello&quot;</span>);</span><br><span class="line">    data.put(<span class="number">2</span>, <span class="string">&quot;world&quot;</span>);</span><br><span class="line">    System.out.println(data.toString());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Convert Map to byte array</span></span><br><span class="line">    <span class="type">ByteArrayOutputStream</span> <span class="variable">byteOut</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayOutputStream</span>();</span><br><span class="line">    <span class="type">ObjectOutputStream</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectOutputStream</span>(byteOut);</span><br><span class="line">    out.writeObject(data);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Parse byte array to Map</span></span><br><span class="line">    <span class="type">ByteArrayInputStream</span> <span class="variable">byteIn</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ByteArrayInputStream</span>(byteOut.toByteArray());</span><br><span class="line">    <span class="type">ObjectInputStream</span> <span class="variable">in</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ObjectInputStream</span>(byteIn);</span><br><span class="line">    Map&lt;Integer, String&gt; data2 = (Map&lt;Integer, String&gt;) in.readObject();</span><br><span class="line">    System.out.println(data2.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>序列化</p>
+<p>使用java.io.ObjectInputStream读取序列化的文件时，若读取到第二个类，就会报错：</p>
+<p><code>java.io.StreamCorruptedException</code></p>
+</li>
+</ol>
+<p>​		解决方法：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/ouhaitao/p/7683514.html">https://www.cnblogs.com/ouhaitao/p/7683514.html</a></p>
+<ol start="3">
+<li><p>单例模式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 这里只能通过getInstance来获取该单例</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">static</span> <span class="type">SrcManager</span> <span class="variable">INSTANCE</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SrcManager</span>();</span><br><span class="line"><span class="keyword">private</span> <span class="title function_">SrcManager</span><span class="params">()</span>&#123;&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> SrcManager <span class="title function_">getInstance</span><span class="params">()</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       

@@ -28,7 +28,7 @@
 <meta property="og:description" content="常用命令1. gpu相关 gpu删除进程 12345678&#x2F;&#x2F; (建议不用，经常看不到) 查看所有跑在GPU上的程序nvidia-smi&#x2F;&#x2F; (建议使用) 查看gpu上进程信息fuser -v &#x2F;dev&#x2F;nvidia*&#x2F;&#x2F; 查看进程的详细信息，包括文件的位置信息ll &#x2F;proc&#x2F;[pid]&#x2F;&#x2F; 删除进程kill -9 [pid]  2. 系统相关 查询文件 1find [查询目录] -name [">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-11-06T07:32:12.000Z">
-<meta property="article:modified_time" content="2023-11-21T12:55:55.132Z">
+<meta property="article:modified_time" content="2023-11-29T03:21:41.105Z">
 <meta property="article:author" content="windbro">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -141,7 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-gpu%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">1. gpu相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">2. 系统相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="nav-number">1.3.</span> <span class="nav-text">3. 进程相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-tar%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4. tar压缩文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5"><span class="nav-number">1.5.</span> <span class="nav-text">5. 链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B6%E5%B0%94%E7%94%A8%E5%88%B0%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">偶尔用到的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-torrent%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">1. torrent下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">2. 设置和取消代理</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-gpu%E7%9B%B8%E5%85%B3"><span class="nav-number">1.1.</span> <span class="nav-text">1. gpu相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%B3%BB%E7%BB%9F%E7%9B%B8%E5%85%B3"><span class="nav-number">1.2.</span> <span class="nav-text">2. 系统相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E8%BF%9B%E7%A8%8B%E7%9B%B8%E5%85%B3"><span class="nav-number">1.3.</span> <span class="nav-text">3. 进程相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-tar%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.</span> <span class="nav-text">4. tar压缩文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E9%93%BE%E6%8E%A5"><span class="nav-number">1.5.</span> <span class="nav-text">5. 链接</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%B6%E5%B0%94%E7%94%A8%E5%88%B0%E7%9A%84%E5%91%BD%E4%BB%A4"><span class="nav-number">2.</span> <span class="nav-text">偶尔用到的命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-torrent%E4%B8%8B%E8%BD%BD"><span class="nav-number">2.1.</span> <span class="nav-text">1. torrent下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E8%AE%BE%E7%BD%AE%E5%92%8C%E5%8F%96%E6%B6%88%E4%BB%A3%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text">2. 设置和取消代理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-rclone"><span class="nav-number">2.3.</span> <span class="nav-text">3. rclone</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -227,7 +227,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-11-21 20:55:55" itemprop="dateModified" datetime="2023-11-21T20:55:55+08:00">2023-11-21</time>
+      <time title="修改时间：2023-11-29 11:21:41" itemprop="dateModified" datetime="2023-11-29T11:21:41+08:00">2023-11-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -284,7 +284,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get --purge remove [package_name]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>为命令起别名</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 例：可以用rclone直接代表后续的命令</span><br><span class="line">alias rclone=&#x27;~/programs/rclone-v1.62.2-linux-amd64/rclone</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 例：可以用rclone直接代表后续的命令</span><br><span class="line">alias rclone=‘~/programs/rclone-v1.62.2-linux-amd64/rclone’</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h4 id="3-进程相关"><a href="#3-进程相关" class="headerlink" title="3. 进程相关"></a>3. 进程相关</h4><ul>
 <li><p>删除进程</p>
@@ -321,6 +321,23 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// 例：env | grep proxy</span><br><span class="line">env | grep xxx</span><br></pre></td></tr></table></figure>
 
 <p>想要代理永久生效，可以修改&#x2F;etc&#x2F;profile文件，添加上述代理</p>
+<h4 id="3-rclone"><a href="#3-rclone" class="headerlink" title="3. rclone"></a>3. rclone</h4><p>rclone常用命令：</p>
+<ul>
+<li><code>rclone copy --progress --transfers 300 --checkers 200 [文档1] [文档2]</code>: 复制文件，这里可以是从一个集群到另一个集群的复制。</li>
+</ul>
+<p>copy命令可以<strong>复制文件夹</strong>，同时复制时<strong>不需要先创建空文件夹，因为会自动创建</strong></p>
+<p>​	参数含义：</p>
+<p>​	progress</p>
+<p>​	transfers: 平行文件数，默认为4，在内存比较小的VPS上建议调小这个参数</p>
+<p>​	</p>
+<ul>
+<li><code>rclone listremotes</code>: 列出所有的远程挂载</li>
+<li><code>rclone config</code>: 查看config，可以对其进行修改</li>
+<li><code>rclone lsf [文件目录]</code>: 查看目录下文件</li>
+<li><code>rclone delete [文件路径]</code>: 删除指定路径下的文件</li>
+<li><code>rclone purge [文件目录]</code>: 删除指定路径下的所有文件</li>
+<li><code>rclone move pathA pathB</code>: 将pathA文件移动到pathB处</li>
+</ul>
 
     </div>
 
